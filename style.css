@@ -1,6 +1,6 @@
 @font-face {
     font-family: Alliance;
-    src: url("public/font/Allience.woff") format("woff"), url("public/font/Allience.ttf")  format("truetype");
+    src: url("/font/Allience.woff") format("woff"), url("/font/Allience.ttf")  format("truetype");
 }
 
 body {    
