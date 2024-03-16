@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Alliance;
+    src: url("public/font/Allience.woff") format("woff"), url("public/font/Allience.ttf")  format("truetype");
+}
+
 body {    
     margin: 0;
 }
@@ -30,6 +35,8 @@ html.lenis, html.lenis body {
     justify-content: center;
     align-items: center;
     h1 {
-        color: #b5944d
+        font-size: 200px;
+        font-family: 'Alliance', sans-serif;
+        color: #b5944d;
     }
 }
