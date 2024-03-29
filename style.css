@@ -43,6 +43,11 @@ h1 {
     opacity: 0.7;
 }
 
+h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
 #mesh {
     display: flex;
     width: 100%;
@@ -92,10 +97,15 @@ section {
 }
 
 .home__how {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 120px auto 61vh;
+}
+
+.home__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .hero {
@@ -118,6 +128,29 @@ section {
 footer {
     position: relative;
     z-index: 2000;
-    background-color: #b5944d;
-    padding: 40px 0 200px;
+    background-color: #806837;
+    color: #000;
+    padding-bottom: 24vh;
+}
+
+.contact {
+    margin-top: 145px;
+    font-size: 24px;
+    line-height: 1.4em;
+}
+
+.contact a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: 1s all cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+.contact a:hover {
+    color: #b5944d;
+    border-bottom: 1px solid #b5944d;
+}
+
+.contact a:active {
+    color: #000;
 }
