@@ -30,16 +30,15 @@ html.lenis, html.lenis body {
 body {
     font-family: "Noto Sans", sans-serif;
     font-weight: 100;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.7em;
-    color: #b5944d;
+    color: #f1e8bf;
 }
 
 h1 {
     font-size: 200px;
     line-height: 1em;
-    font-family: 'Alliance', sans-serif;
-    color: #b5944d;
+    color: #f1e8bf;
     opacity: 0.7;
 }
 
@@ -75,7 +74,7 @@ section {
 
 .home__why {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding-bottom: 50vh;
 }
 
@@ -84,22 +83,48 @@ section {
 }
 
 .home__why__header h2 {
-    font-size: 70px;
+    font-size: 45px;
     line-height: 1.2em;
-    font-family: 'Alliance', sans-serif;
+    font-weight: 100;
     margin: 0;
 }
 
 .home__why__content__text {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 34px;
+    width: 495px;
+    margin-left: 70px;
 }
 
 .home__how {
     flex-direction: row;
     justify-content: space-between;
     margin: 120px auto 61vh;
+}
+
+.home__what {
+    margin: 120px auto 61vh;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.list__item {
+    flex: 1 0 calc(21%);
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
 }
 
 .home__footer {
@@ -110,27 +135,31 @@ section {
 
 .hero {
     width: 365px;
-    margin-top: 145px;
-    margin-right: 60px;
 }
 
 .lead {
     font-weight: 100;
     font-size: 20px;
-    line-height: 1.8em;
+    line-height: 2.2em;
+    text-align: center;
 }
 
 .lead__img {
-    height: 20px;
-    margin-left: 4px;
+    height: 90px;
+    margin-top: 40px;
 }
 
 footer {
     position: relative;
     z-index: 2000;
-    background-color: #806837;
+    background-color: #f1e8bf;
     color: #000;
     padding-bottom: 24vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
 .contact {
@@ -139,18 +168,27 @@ footer {
     line-height: 1.4em;
 }
 
-.contact a {
-    color: #000;
-    text-decoration: none;
-    border-bottom: 1px solid #000;
-    transition: 1s all cubic-bezier(0.175, 0.885, 0.32, 1.275)
-}
-
-.contact a:hover {
-    color: #b5944d;
-    border-bottom: 1px solid #b5944d;
-}
-
 .contact a:active {
     color: #000;
+}
+
+.social-icon {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 25px;
+}
+
+.social-icon__img:before {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: url("./public/img/social-icon__instagram.svg");
+    background-size: 100%;
 }
