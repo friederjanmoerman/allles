@@ -8,49 +8,86 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 
 const renderer = new THREE.WebGLRenderer({
     antialias: true,
-}); 
+});
 
-const container = document.getElementById( 'mesh' );
-document.body.appendChild( container );
+const container = document.getElementById('mesh');
+document.body.appendChild(container);
 
-renderer.setPixelRatio( window.devicePixelRatio );
-renderer.setSize( window.innerWidth, window.innerHeight );
-container.appendChild( renderer.domElement );
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+container.appendChild(renderer.domElement);
 
-camera.position.set(0,1,2)
+camera.position.set(0, 1, 2);
 
 // Lights
-const mainLight = new THREE.PointLight('white', 10)
-mainLight.position.set(5,5,0)
+const mainLight = new THREE.PointLight('white', 10);
+mainLight.position.set(5, 5, 0);
 
-const secondLight = new THREE.PointLight('#fde58b', 5)
-secondLight.position.set(-5,5,0)
+const secondLight = new THREE.PointLight('#fde58b', 5);
+secondLight.position.set(-5, 5, 0);
 
-const ambientLight = new THREE.AmbientLight('white', 0.5)
+const ambientLight = new THREE.AmbientLight('white', 0.5);
 
-scene.add(mainLight,secondLight,ambientLight)
+scene.add(mainLight, secondLight, ambientLight);
 
 // Model
-
 const assetLoader = new GLTFLoader();
 let mixer;
+let animationAction;
 
-assetLoader.load(womanUrl.href, function ( gltf ) {
-  const model = gltf.scene;	
-	scene.add(model);
-  mixer = new THREE.AnimationMixer(model);
-  console.log(mixer);
-  const clips = gltf.animations;
-  const clip = THREE.AnimationClip.findByName(clips, 'Action');
-  console.log(clip);
-  const action = mixer.clipAction(clip);
-  action.play();
+assetLoader.load(womanUrl.href, function (gltf) {
+    const model = gltf.scene;
+    scene.add(model);
+    mixer = new THREE.AnimationMixer(model);
+    const clips = gltf.animations;
+    const clip = THREE.AnimationClip.findByName(clips, 'Action');
+    animationAction = mixer.clipAction(clip);
+    animationAction.play();
+});
+
+// Scroll event listener
+window.addEventListener('scroll', () => {
+    if (mixer && animationAction) {
+        const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        const duration = animationAction.getClip().duration;
+        mixer.setTime(scrollPercent * duration);
+    }
 });
 
 function animate() {
-  if ( mixer ) mixer.update( 1/240);
-	requestAnimationFrame( animate );
-	renderer.render( scene, camera );
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
 }
 
 animate();
+
+
+/*
+   * toggle
+   */
+
+var toggle = function (elem) {
+  elem.classList.toggle('is-displayed');
+};
+
+document.addEventListener('click', function (event) {
+  var clickedElement = event.target;
+
+  if (!clickedElement.classList.contains('js-toggle')) return;
+
+  clickedElement.classList.toggle('is-active');
+
+  // if (clickedElement.classList.contains('is-active')) {
+  //   clickedElement.innerHTML = "Hide synopsis";
+  // } else {
+  //   clickedElement.innerHTML = "View synopsis";
+  // }
+
+  event.preventDefault();
+
+  var content = document.querySelector(clickedElement.hash);
+  if (!content) return;
+
+  toggle(content);
+
+}, false);

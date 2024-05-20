@@ -182,10 +182,8 @@ section {
 
 .home__what__list li {
     position: relative;
-    height: 140px;
     width: 100%;
-    font-size: 6rem;
-    line-height: 60px;
+    margin-bottom: 2em;
 }
 
 .home__what__list a {
@@ -196,6 +194,8 @@ section {
     color: inherit;
     text-decoration: none;
     opacity: 0.3;
+    font-size: 5.5rem;
+    line-height: 1.2em;
 }
 
 .home__what__list a:hover {
@@ -265,3 +265,4 @@ footer {
     background: url("/img/social-icon__instagram.svg");
     background-size: 100%;
 }
+
