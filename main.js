@@ -38,6 +38,7 @@ let animationAction;
 assetLoader.load(womanUrl.href, function (gltf) {
     const model = gltf.scene;
     scene.add(model);
+    model.rotation.y = - Math.PI / 3;
     mixer = new THREE.AnimationMixer(model);
     const clips = gltf.animations;
     const clip = THREE.AnimationClip.findByName(clips, 'Action');
