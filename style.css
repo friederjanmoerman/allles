@@ -202,6 +202,15 @@ section {
     opacity: 1;
 }
 
+#home__what__anchor__info-pop-up {
+    display: none;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    color: white;
+    z-index: 4000;
+}
+
 .home__footer {
     flex-direction: row;
     justify-content: space-between;
@@ -266,3 +275,8 @@ footer {
     background-size: 100%;
 }
 
+
+
+#home__what__anchor__info-pop-up.js-is-displayed {
+    display: flex;
+}

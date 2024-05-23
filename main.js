@@ -78,34 +78,41 @@ animate();
 
 
 
-
-
 /*
-   * toggle
-   */
+ * Toggle on hover
+ */
 
-var toggle = function (elem) {
-  elem.classList.toggle('is-displayed');
+const hoverToToggleElements = document.getElementsByClassName("js-hover-to-toggle");
+const whatInfoPopup = document.getElementById("home__what__anchor__info-pop-up");
+
+const hoverToToggle = (e) => {
+  e.addEventListener("mouseover", () => {
+    e.classList.add("is-hovered");
+    checkHoverClass();
+  });
+
+  e.addEventListener("mouseleave", () => {
+    e.classList.remove("is-hovered");
+    checkHoverClass();
+  });
 };
 
-document.addEventListener('click', function (event) {
-  var clickedElement = event.target;
+for (var i = 0; i < hoverToToggleElements.length; i++) {
+  hoverToToggle(hoverToToggleElements[i]);
+}
 
-  if (!clickedElement.classList.contains('js-toggle')) return;
+const checkHoverClass = () => {
+  let isHovered = false;
+  for (var i = 0; i < hoverToToggleElements.length; i++) {
+    if (hoverToToggleElements[i].classList.contains("is-hovered")) {
+      isHovered = true;
+      break;
+    }
+  }
 
-  clickedElement.classList.toggle('is-active');
-
-  // if (clickedElement.classList.contains('is-active')) {
-  //   clickedElement.innerHTML = "Hide synopsis";
-  // } else {
-  //   clickedElement.innerHTML = "View synopsis";
-  // }
-
-  event.preventDefault();
-
-  var content = document.querySelector(clickedElement.hash);
-  if (!content) return;
-
-  toggle(content);
-
-}, false);
+  if (isHovered) {
+    whatInfoPopup.classList.add("js-is-displayed");
+  } else {
+    whatInfoPopup.classList.remove("js-is-displayed");
+  }
+};
