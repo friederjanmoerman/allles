@@ -104,6 +104,7 @@ h3 {
     color: #806837;
     text-decoration: none;
     opacity: 0.6;
+    font-weight: 400;
 }
 
 .header__nav__list__item__anchor:hover {
@@ -188,8 +189,8 @@ section {
 
 .home__what__list a {
     font-family: 'OL Round Gothic';
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto;
     height: 100%;
     color: inherit;
     text-decoration: none;
@@ -203,12 +204,23 @@ section {
 }
 
 #home__what__anchor__info-pop-up {
-    display: none;
+    visibility: hidden;
     position: fixed;
-    right: 40px;
-    bottom: 40px;
-    color: white;
+    right: 2%;
+    bottom: 10%;
+    font-size: 16px;
+    color: #806837;
     z-index: 4000;
+    max-width: 300px;
+    transform: translateY(50%);
+    opacity: 0;
+    transition: opacity 1s, transform 1s, visibility 1s;
+}
+
+#home__what__anchor__info-pop-up.js-is-displayed {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .home__footer {
@@ -275,8 +287,16 @@ footer {
     background-size: 100%;
 }
 
+/*
+ * Responsive
+ */
 
+.show-on-small-screen { 
+    display: none;
+}
 
-#home__what__anchor__info-pop-up.js-is-displayed {
-    display: flex;
+@media only screen and (max-width: 1200px) {
+    .show-on-small-screen {
+        display: block;
+    }
 }
