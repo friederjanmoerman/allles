@@ -204,7 +204,7 @@ section {
 
 #home__what__anchor__info-pop-up {
     display: none;
-    position: absolute;
+    position: fixed;
     right: 40px;
     bottom: 40px;
     color: white;

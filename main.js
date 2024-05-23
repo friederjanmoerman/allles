@@ -106,6 +106,10 @@ const checkHoverClass = () => {
   for (var i = 0; i < hoverToToggleElements.length; i++) {
     if (hoverToToggleElements[i].classList.contains("is-hovered")) {
       isHovered = true;
+      if (hoverToToggleElements[i].nextElementSibling) {
+        var copyAnchorInfo = hoverToToggleElements[i].nextElementSibling.innerHTML;
+        whatInfoPopup.innerHTML = copyAnchorInfo;
+      }
       break;
     }
   }
