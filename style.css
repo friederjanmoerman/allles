@@ -17,6 +17,7 @@
 
 body {    
     margin: 0;
+    background: #000;
 }
 
 html.lenis, html.lenis body {
@@ -144,7 +145,7 @@ section {
     width: 495px;
 }
 
-.home__why__header h2 {
+h2 {
     font-size: 45px;
     line-height: 1.2em;
     font-weight: 100;
@@ -246,6 +247,21 @@ section {
     margin-top: 40px;
 }
 
+.section__services {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section__services__item {
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 footer {
     position: relative;
     z-index: 2000;
@@ -295,8 +311,14 @@ footer {
     display: none;
 }
 
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
     .show-on-small-screen {
         display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .services__item {
+        flex: 1 1 100%;
     }
 }
