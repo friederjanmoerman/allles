@@ -135,13 +135,18 @@ section {
     justify-content: space-between;
 }
 
+.services__title {
+    display: flex;
+    align-items: flex-end;
+}
+
 .home__why {
     display: flex;
     align-items: flex-end;
     padding-bottom: 50vh;
 }
 
-.home__why__content {
+.home__why__content, .services__title__content {
     width: 495px;
 }
 
@@ -152,7 +157,7 @@ h2 {
     margin: 0;
 }
 
-.home__why__content__text {
+.home__why__content__text, .services__title__content__text {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
