@@ -18,6 +18,11 @@
 body {    
     margin: 0;
     background: #000;
+    font-size: 20px;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 100;
+    line-height: 1.7em;
+    color: #806837;
 }
 
 html.lenis, html.lenis body {
@@ -38,14 +43,6 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-scrolling iframe {
     pointer-events: none;
-}
-
-body {
-    font-family: "Noto Sans", sans-serif;
-    font-weight: 100;
-    font-size: 14px;
-    line-height: 1.7em;
-    color: #806837;
 }
 
 h1 {
@@ -104,12 +101,11 @@ h3 {
     font-size: 14px;
     color: #806837;
     text-decoration: none;
-    opacity: 0.6;
     font-weight: 400;
 }
 
 .header__nav__list__item__anchor:hover {
-    opacity: 1;
+    filter: brightness(120%);
 }
 
 section {
@@ -137,7 +133,6 @@ section {
 
 .services__title {
     display: flex;
-    align-items: flex-end;
     margin-top: 100px;
 }
 
@@ -206,13 +201,12 @@ h2 {
     height: 100%;
     color: inherit;
     text-decoration: none;
-    opacity: 0.3;
     font-size: 5.5rem;
     line-height: 1.2em;
 }
 
 .home__what__list a:hover {
-    opacity: 1;
+    filter: brightness(120%);
 }
 
 #home__what__anchor__info-pop-up {
@@ -220,7 +214,7 @@ h2 {
     position: fixed;
     right: 2%;
     bottom: 10%;
-    font-size: 16px;
+    font-size: 25px;
     color: #806837;
     z-index: 4000;
     max-width: 300px;
@@ -247,7 +241,7 @@ h2 {
 
 .lead {
     font-family: 'OL Round Gothic';
-    font-size: 16px;
+    font-size: 22px;
     letter-spacing: 1.5px;
     line-height: 2em;
     text-align: center;
@@ -272,7 +266,7 @@ h2 {
 footer {
     position: relative;
     z-index: 2000;
-    color: #c19e40;
+    color: #806837;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -308,6 +302,11 @@ footer {
     width: 20px;
     background: url("/img/social-icon__instagram.svg");
     background-size: 100%;
+}
+
+.cta {
+    text-decoration: none;
+    color: #806837;
 }
 
 /*
