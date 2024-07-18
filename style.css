@@ -138,6 +138,7 @@ section {
 .services__title {
     display: flex;
     align-items: flex-end;
+    margin-top: 100px;
 }
 
 .home__why {
@@ -146,7 +147,7 @@ section {
     padding-bottom: 50vh;
 }
 
-.home__why__content, .services__title__content {
+.home__why__content {
     width: 495px;
 }
 
@@ -157,13 +158,18 @@ h2 {
     margin: 0;
 }
 
-.home__why__content__text, .services__title__content__text {
+.home__why__content__text {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 34px;
     width: 495px;
     margin-left: 70px;
+}
+
+.services__title__content__text {
+    width: auto;
+    margin: 0;
 }
 
 .home__how {
@@ -261,10 +267,6 @@ h2 {
 
 .section__services__item {
     flex: 1 1 calc(50% - 20px);
-    box-sizing: border-box;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 footer {
