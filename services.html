@@ -1,15 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Allles</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category Squares with Filters</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        margin: 20px;
+      }
+      #filter-container {
+        margin-bottom: 20px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 100px);
+        grid-gap: 10px;
+      }
+      .square {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #4caf50;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 5px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
-  <body id="body"></body>
+  <body>
+    <h1>Category Squares with Filters</h1>
+
+    <div id="filter-container">
+      <label for="filter-select">Select a Filter: </label>
+      <select id="filter-select" onchange="applyFilter()">
+        <option value="all">Show All</option>
+        <option value="filterA">Filter A (1-4)</option>
+        <option value="filterB">Filter B (5-8)</option>
+        <option value="filterC">Filter C (9-10)</option>
+      </select>
+    </div>
+
+    <div class="grid">
+      <div class="square categoryA">Category 1</div>
+      <div class="square categoryA">Category 2</div>
+      <div class="square categoryA">Category 3</div>
+      <div class="square categoryA">Category 4</div>
+      <div class="square categoryB">Category 5</div>
+      <div class="square categoryB">Category 6</div>
+      <div class="square categoryB">Category 7</div>
+      <div class="square categoryB">Category 8</div>
+      <div class="square categoryC">Category 9</div>
+      <div class="square categoryC">Category 10</div>
+    </div>
+
+    <script>
+      function applyFilter() {
+        const filter = document.getElementById("filter-select").value
+        const allSquares = document.querySelectorAll(".square")
+
+        // Show all squares by default
+        allSquares.forEach(square => {
+          square.classList.remove("hidden")
+        })
+
+        // Apply the filter logic
+        if (filter === "filterA") {
+          document.querySelectorAll(".categoryB, .categoryC").forEach(square => {
+            square.classList.add("hidden")
+          })
+        } else if (filter === "filterB") {
+          document.querySelectorAll(".categoryA, .categoryC").forEach(square => {
+            square.classList.add("hidden")
+          })
+        } else if (filter === "filterC") {
+          document.querySelectorAll(".categoryA, .categoryB").forEach(square => {
+            square.classList.add("hidden")
+          })
+        }
+      }
+    </script>
+  </body>
 </html>
