@@ -6,7 +6,6 @@
     <title>Category Squares with Filters</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -17,7 +16,22 @@
         margin: 20px;
       }
       #filter-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
         margin-bottom: 20px;
+      }
+      .filter-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .filter-button:hover {
+        background-color: #0056b3;
       }
       .grid {
         display: grid;
@@ -42,34 +56,28 @@
     </style>
   </head>
   <body>
-    <h1>Category Squares with Filters</h1>
-
     <div id="filter-container">
-      <label for="filter-select">Select a Filter: </label>
-      <select id="filter-select" onchange="applyFilter()">
-        <option value="all">Show All</option>
-        <option value="filterA">Filter A (1-4)</option>
-        <option value="filterB">Filter B (5-8)</option>
-        <option value="filterC">Filter C (9-10)</option>
-      </select>
+      <button class="filter-button" onclick="applyFilter('all')">Show All</button>
+      <button class="filter-button" onclick="applyFilter('filterA')">Personal</button>
+      <button class="filter-button" onclick="applyFilter('filterB')">Group</button>
+      <button class="filter-button" onclick="applyFilter('filterC')">Events</button>
     </div>
 
     <div class="grid">
-      <div class="square categoryA">Category 1</div>
-      <div class="square categoryA">Category 2</div>
-      <div class="square categoryA">Category 3</div>
-      <div class="square categoryA">Category 4</div>
-      <div class="square categoryB">Category 5</div>
-      <div class="square categoryB">Category 6</div>
-      <div class="square categoryB">Category 7</div>
-      <div class="square categoryB">Category 8</div>
-      <div class="square categoryC">Category 9</div>
-      <div class="square categoryC">Category 10</div>
+      <div class="square categoryA">Personal 1</div>
+      <div class="square categoryA">Personal 2</div>
+      <div class="square categoryA">Personal 3</div>
+      <div class="square categoryA">Personal 4</div>
+      <div class="square categoryB">Group 1</div>
+      <div class="square categoryB">Group 2</div>
+      <div class="square categoryB">Group 3</div>
+      <div class="square categoryB">Group 4</div>
+      <div class="square categoryC">Events 1</div>
+      <div class="square categoryC">Events 2</div>
     </div>
 
     <script>
-      function applyFilter() {
-        const filter = document.getElementById("filter-select").value
+      function applyFilter(filter) {
         const allSquares = document.querySelectorAll(".square")
 
         // Show all squares by default
