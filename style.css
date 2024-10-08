@@ -18,6 +18,8 @@
 body {    
     margin: 0;
     background: #000;
+    background: rgb(0,0,0);
+    /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,104,55,1) 100%); */
     font-size: 20px;
     font-family: "Noto Sans", sans-serif;
     font-weight: 100;
@@ -160,6 +162,7 @@ h2 {
     gap: 34px;
     width: 495px;
     margin-left: 70px;
+    text-align: justify;
 }
 
 .services__title__content__text {

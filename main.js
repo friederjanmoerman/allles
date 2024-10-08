@@ -7,7 +7,8 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
-    antialias: true,
+  antialias: true,
+  alpha: true,
 });
 
 const container = document.getElementById('mesh');
@@ -49,24 +50,37 @@ assetLoader.load(womanUrl.href, function (gltf) {
 
 // Scroll event listener
 window.addEventListener('scroll', () => {
-    if (mixer && animationAction && model) {
-        const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        const animationEndPoint = 1 / 3;
+  if (mixer && animationAction && model) {
+      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const animationEndPoint = 1 / 3;
 
-        if (scrollPercent <= animationEndPoint) {
-            const adjustedScrollPercent = scrollPercent / animationEndPoint;
-            const duration = animationAction.getClip().duration;
-            mixer.setTime(adjustedScrollPercent * duration);
-            model.rotation.y = adjustedScrollPercent * -Math.PI / 3; // Rotate model -π/3 radians (60 degrees)
-        } else {
-            // Ensure the animation and rotation remain at their end state
-            if (!animationAction.isRunning()) {
-                const duration = animationAction.getClip().duration;
-                mixer.setTime(duration); // Animation stays at its end
-                model.rotation.y = -Math.PI / 3; // Rotation stays at -π/3 radians
-            }
-        }
-    }
+      // Set new light color at a specific scroll percentage
+      const startColor = new THREE.Color('white');
+      const endColor = new THREE.Color('#ffe059');
+
+      if (scrollPercent <= animationEndPoint) {
+          const adjustedScrollPercent = scrollPercent / animationEndPoint;
+          const duration = animationAction.getClip().duration;
+
+          // Animate model and light color
+          mixer.setTime(adjustedScrollPercent * duration);
+          model.rotation.y = adjustedScrollPercent * -Math.PI / 3; // Rotate model -π/3 radians (60 degrees)
+
+          // Interpolate color
+          mainLight.color.lerpColors(startColor, endColor, adjustedScrollPercent);
+          
+      } else {
+          // Ensure the animation and rotation remain at their end state
+          if (!animationAction.isRunning()) {
+              const duration = animationAction.getClip().duration;
+              mixer.setTime(duration); // Animation stays at its end
+              model.rotation.y = -Math.PI / 3; // Rotation stays at -π/3 radians
+
+              // Set light color to the final value
+              mainLight.color.copy(endColor);
+          }
+      }
+  }
 });
 
 function animate() {
@@ -75,8 +89,6 @@ function animate() {
 }
 
 animate();
-
-
 
 /*
  * Toggle on hover
@@ -120,3 +132,5 @@ const checkHoverClass = () => {
     whatInfoPopup.classList.remove("js-is-displayed");
   }
 };
+
+
