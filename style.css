@@ -313,6 +313,59 @@ footer {
 }
 
 /*
+ * Services
+ */
+
+section.services {
+    display: flex;
+    align-items: center;
+}
+
+#filter__filter {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+padding: 10px 20px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+}
+
+.filter-button:hover {
+background-color: #0056b3;
+}
+
+.filter__items {
+display: grid;
+grid-template-columns: repeat(5, 100px);
+grid-gap: 10px;
+}
+
+.square {
+width: 100px;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #4caf50;
+color: white;
+font-size: 16px;
+text-align: center;
+border-radius: 5px;
+}
+
+.hidden {
+display: none;
+}
+
+/*
  * Responsive
  */
 

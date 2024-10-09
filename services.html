@@ -1,81 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Category Squares with Filters</title>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-      }
-      h1 {
-        margin: 20px;
-      }
-      #filter-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 20px;
-      }
-      .filter-button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      .filter-button:hover {
-        background-color: #0056b3;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(5, 100px);
-        grid-gap: 10px;
-      }
-      .square {
-        width: 100px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #4caf50;
-        color: white;
-        font-size: 16px;
-        text-align: center;
-        border-radius: 5px;
-      }
-      .hidden {
-        display: none;
-      }
-    </style>
+    <meta charset="utf-8" />
+    <title>Allles</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <div id="filter-container">
-      <button class="filter-button" onclick="applyFilter('all')">Show All</button>
-      <button class="filter-button" onclick="applyFilter('filterA')">Personal</button>
-      <button class="filter-button" onclick="applyFilter('filterB')">Group</button>
-      <button class="filter-button" onclick="applyFilter('filterC')">Events</button>
-    </div>
+  <body id="body">
+    <section class="services">
+      <div id="filter__filter">
+        <button class="filter-button" onclick="applyFilter('all')">Show All</button>
+        <button class="filter-button" onclick="applyFilter('filterA')">Personal</button>
+        <button class="filter-button" onclick="applyFilter('filterB')">Group</button>
+        <button class="filter-button" onclick="applyFilter('filterC')">Events</button>
+      </div>
 
-    <div class="grid">
-      <div class="square categoryA">Personal 1</div>
-      <div class="square categoryA">Personal 2</div>
-      <div class="square categoryA">Personal 3</div>
-      <div class="square categoryA">Personal 4</div>
-      <div class="square categoryB">Group 1</div>
-      <div class="square categoryB">Group 2</div>
-      <div class="square categoryB">Group 3</div>
-      <div class="square categoryB">Group 4</div>
-      <div class="square categoryC">Events 1</div>
-      <div class="square categoryC">Events 2</div>
+      <div class="filter__items">
+        <div class="square categoryA">Personal 1</div>
+        <div class="square categoryA">Personal 2</div>
+        <div class="square categoryA">Personal 3</div>
+        <div class="square categoryA">Personal 4</div>
+        <div class="square categoryB">Group 1</div>
+        <div class="square categoryB">Group 2</div>
+        <div class="square categoryB">Group 3</div>
+        <div class="square categoryB">Group 4</div>
+        <div class="square categoryC">Events 1</div>
+        <div class="square categoryC">Events 2</div>
+      </div>
     </div>
-
     <script>
       function applyFilter(filter) {
         const allSquares = document.querySelectorAll(".square")
