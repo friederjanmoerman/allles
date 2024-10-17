@@ -118,13 +118,13 @@ section {
     max-width: 1024px;
     margin: 0 auto;
     flex-direction: column;
-    z-index: 2000;
 }
 
 .splash {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    z-index: 500;
 }
 
 .splash h1 {
@@ -141,8 +141,14 @@ section {
 
 .home__why {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding-bottom: 50vh;
+    z-index: 500;
+}
+
+.home__why .hero {
+    margin-left: 300px;
+    color:#806837;
 }
 
 .home__why__content {
@@ -175,10 +181,12 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
     margin: 120px auto 61vh;
+    z-index: 2000;
 }
 
 .home__what {
     margin: 120px auto 61vh;
+    z-index: 2000;
 }
 
 .home__what__list {
@@ -237,6 +245,7 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 2000;
 }
 
 .hero {
