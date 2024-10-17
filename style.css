@@ -60,6 +60,7 @@ h1 {
 h3 {
     text-transform: uppercase;
     font-weight: 400;
+    font-size: 12px;
 }
 
 #mesh {
@@ -156,7 +157,7 @@ section {
 }
 
 h2 {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 1.2em;
     font-weight: 100;
     margin: 0;
@@ -169,7 +170,6 @@ h2 {
     gap: 34px;
     width: 495px;
     margin-left: 70px;
-    text-align: justify;
 }
 
 .services__title__content__text {
@@ -254,10 +254,11 @@ h2 {
 
 .lead {
     font-family: 'OL Round Gothic';
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: 1.5px;
     line-height: 2em;
     text-align: center;
+    opacity: 0.7;
 }
 
 .lead__img {
