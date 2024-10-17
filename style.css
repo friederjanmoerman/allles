@@ -24,7 +24,8 @@ body {
     font-family: "Noto Sans", sans-serif;
     font-weight: 100;
     line-height: 1.7em;
-    color: #806837;
+    /* color: #806837; */
+    color: #C0C0C0;
 }
 
 html.lenis, html.lenis body {
@@ -101,7 +102,7 @@ h3 {
 
 .header__nav__list__item__anchor {
     font-size: 14px;
-    color: #806837;
+    color: #C0C0C0;
     text-decoration: none;
     font-weight: 400;
 }
@@ -218,7 +219,7 @@ h2 {
     right: 2%;
     bottom: 10%;
     font-size: 25px;
-    color: #806837;
+    color: #C0C0C0;
     z-index: 4000;
     max-width: 300px;
     transform: translateY(50%);
@@ -269,7 +270,7 @@ h2 {
 footer {
     position: relative;
     z-index: 2000;
-    color: #806837;
+    color: #C0C0C0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -309,7 +310,7 @@ footer {
 
 .cta {
     text-decoration: none;
-    color: #806837;
+    color: #C0C0C0;
 }
 
 /*
