@@ -10,9 +10,15 @@
 }
 
 @font-face {
-    font-family: 'OL Round Gothic';
+    font-family: 'Josefin Sans Regular';
     src: url("/font/ol-round-gothic.woff2") format("woff2"), 
     url("/font/ol-round-gothic.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Josefin Sans Regular';
+    src: url("/font/JosefinSans-Regular.woff2") format("woff2"), 
+    url("/font/JosefinSans-Regular.woff") format("woff");
 }
 
 body {    
@@ -49,7 +55,7 @@ html.lenis, html.lenis body {
 }
 
 h1 {
-    font-family: 'OL Round Gothic';
+    font-family: 'Josefin Sans Regular';
     font-size: 90px;
     line-height: 1em;
     color: #806837;
@@ -169,7 +175,6 @@ h2 {
     justify-content: space-between;
     gap: 34px;
     width: 495px;
-    margin-left: 70px;
 }
 
 .services__title__content__text {
@@ -178,8 +183,6 @@ h2 {
 }
 
 .home__how {
-    flex-direction: row;
-    justify-content: space-between;
     margin: 120px auto 61vh;
     z-index: 2000;
 }
@@ -207,7 +210,7 @@ h2 {
 }
 
 .home__what__list a {
-    font-family: 'OL Round Gothic';
+    font-family: 'Josefin Sans Regular';
     display: inline-block;
     width: auto;
     height: 100%;
@@ -253,7 +256,7 @@ h2 {
 }
 
 .lead {
-    font-family: 'OL Round Gothic';
+    font-family: 'Josefin Sans Regular';
     font-size: 20px;
     letter-spacing: 1.5px;
     line-height: 2em;

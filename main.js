@@ -83,6 +83,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
+
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
@@ -133,4 +134,19 @@ const checkHoverClass = () => {
   }
 };
 
+
+
+window.addEventListener('scroll', function() {
+  const mesh = document.getElementById('mesh');
+  const scrollTop = window.scrollY;
+  const viewportHeight = window.innerHeight;
+
+  // Calculate scroll position in terms of percentage of 1 viewport height (i.e., 100vh)
+  const scrollFraction = scrollTop / viewportHeight;
+
+  // Move mesh by 2/3 of the viewport width when scrolled 1 viewport height (100%)
+  if (scrollFraction <= 1) {
+    mesh.style.transform = `translateX(${scrollFraction * (1 / 4) * 100}vw)`;
+  }
+});
 
