@@ -63,12 +63,12 @@ body {
 .menu-toggle {
     position: absolute;
     right: 1.5rem;
-    top: 50%;
-    transform: translate(0, -50%);
+    top: 20px;
     height: 26px;
     width: 29px;
     color: #b6994e;
     cursor: pointer;
+    z-index: 4000;
 }
 
 .menu-toggle:hover {
