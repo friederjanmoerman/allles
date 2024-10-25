@@ -27,37 +27,84 @@
     url("/font/JosefinSans-Light.woff") format("woff");
 }
 
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
 body {    
     margin: 0;
-    background: #000;
+    background: #fff;
     background: rgb(0,0,0);
-    /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,104,55,1) 100%); */
     font-size: 20px;
     font-family: "Noto Sans", sans-serif;
     font-weight: 100;
     line-height: 1.7em;
-    /* color: #806837; */
     color: #C0C0C0;
+    background: linear-gradient(270deg, #765b22, #000000);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+  
+.menu-toggle {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 26px;
+    width: 29px;
+    color: #b6994e;
+    cursor: pointer;
 }
 
-html.lenis, html.lenis body {
-    height: auto;
+.menu-toggle:hover {
+    color: #b6994e;
 }
 
-.lenis.lenis-smooth {
-    scroll-behavior: auto !important;
+.menu-toggle-bar {
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #b6994e;
+    transition: all 0.3s ease;
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
+.menu-toggle-bar.menu-toggle-bar--top {
+    transform: translate(0, -8px);
 }
 
-.lenis.lenis-stopped {
-    overflow: hidden;
+.menu-toggle-bar.menu-toggle-bar--bottom {
+    transform: translate(0, 8px);
 }
 
-.lenis.lenis-scrolling iframe {
-    pointer-events: none;
+.nav-open .menu-toggle-bar.menu-toggle-bar--top {
+    transform: translate(0, 0) rotate(45deg);
+}
+
+.nav-open .menu-toggle-bar.menu-toggle-bar--middle {
+    opacity: 0;
+}
+
+.nav-open .menu-toggle-bar.menu-toggle-bar--bottom {
+    transform: translate(0, 0) rotate(-45deg);
 }
 
 h1 {
@@ -65,7 +112,7 @@ h1 {
     font-size: 90px;
     line-height: 1em;
     /* color: #806837; */
-    color: #C0C0C0;
+    color: #b6994e;
     text-transform: uppercase;
 }
 
@@ -73,6 +120,7 @@ h3 {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 12px;
+    color: #b6994e;
 }
 
 #mesh {
@@ -86,7 +134,7 @@ h3 {
 
 .header {
     position: absolute;
-    top: 0;
+    top: 20px;
     width: 100vw;
     z-index: 3000;
 }
@@ -96,6 +144,7 @@ h3 {
     max-width: 1024px;
     margin: 0 auto;
     display: flex;
+    position: relative;
 }
 
 .header__nav__list {
@@ -165,8 +214,8 @@ section {
     color:#806837;
 }
 
-.home__why__header, .home__why__content {
-    width: 545px;
+.home__why__content {
+    width: 495px;
 }
 
 h2 {
@@ -192,7 +241,6 @@ h2 {
 .home__how {
     margin: 120px auto 61vh;
     z-index: 2000;
-    align-items: flex-end;
 }
 
 .home__what {
@@ -222,7 +270,7 @@ h2 {
     width: auto;
     text-transform: uppercase;
     height: 100%;
-    color: inherit;
+    color: #b6994e;
     text-decoration: none;
     font-size: 4.5rem;
     line-height: 1.2em;
