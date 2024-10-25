@@ -146,7 +146,7 @@ window.addEventListener('scroll', function() {
 
   // Move mesh by 2/3 of the viewport width when scrolled 1 viewport height (100%)
   if (scrollFraction <= 1) {
-    mesh.style.transform = `translateX(${scrollFraction * (1 / 4) * 100}vw)`;
+    mesh.style.transform = `translateX(${-scrollFraction * (1 / 4) * 100}vw)`;
   }
 });
 

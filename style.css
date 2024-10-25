@@ -165,8 +165,8 @@ section {
     color:#806837;
 }
 
-.home__why__content {
-    width: 495px;
+.home__why__header, .home__why__content {
+    width: 545px;
 }
 
 h2 {
@@ -192,6 +192,7 @@ h2 {
 .home__how {
     margin: 120px auto 61vh;
     z-index: 2000;
+    align-items: flex-end;
 }
 
 .home__what {
@@ -217,13 +218,13 @@ h2 {
 }
 
 .home__what__list a {
-    font-family: 'Josefin Sans Light';
     display: inline-block;
     width: auto;
+    text-transform: uppercase;
     height: 100%;
     color: inherit;
     text-decoration: none;
-    font-size: 5.5rem;
+    font-size: 4.5rem;
     line-height: 1.2em;
 }
 
