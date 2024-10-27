@@ -29,17 +29,17 @@
 
 @-webkit-keyframes AnimationName {
     0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
+    50%{background-position:45% 50%}
     100%{background-position:0% 50%}
 }
 @-moz-keyframes AnimationName {
     0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
+    50%{background-position:45% 50%}
     100%{background-position:0% 50%}
 }
 @keyframes AnimationName {
     0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
+    50%{background-position:45% 50%}
     100%{background-position:0% 50%}
 }
 
@@ -59,9 +59,50 @@ body {
     -moz-animation: AnimationName 30s ease infinite;
     animation: AnimationName 30s ease infinite;
 }
+
+#menu {
+    transition: transform 0.4s ease-in-out;
+    transform: translateX(100%);
+    display: flex;
+    position: fixed;
+    right: 0;
+}
+
+.menu__list {
+    margin-top: 40%;
+}
+
+.menu__list__item {
+    list-style: none;
+}
+
+.menu__list__item__anchor {
+    font-family: 'Josefin Sans Light';
+    color: #b6994e;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.menu__list__item__anchor:hover {
+    filter: brightness(120%);
+}
+
+body.nav-open #menu {
+    height: 100vh;
+    width: 20vw;
+    background-color: black;
+    border-left: 1px solid #b6994e;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(0);
+    z-index: 3500;
+}
   
 .menu-toggle {
-    position: absolute;
+    position: fixed;
     right: 1.5rem;
     top: 20px;
     height: 26px;
@@ -72,7 +113,7 @@ body {
 }
 
 .menu-toggle:hover {
-    color: #b6994e;
+    filter: brightness(120%);
 }
 
 .menu-toggle-bar {
@@ -341,14 +382,16 @@ footer {
     color: #C0C0C0;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
+    max-width: 1024px;
+    margin: 0 auto 40px;
 }
 
 .contact {
-    margin-top: 145px;
     font-size: 14px;
+    color: #b6994e;
+    font-family: 'Josefin Sans Light';
 }
 
 .contact a:active {
@@ -362,7 +405,6 @@ footer {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-left: 25px;
 }
 
 .social-icon__img:before {
@@ -374,6 +416,10 @@ footer {
     width: 20px;
     background: url("/img/social-icon__instagram.svg");
     background-size: 100%;
+}
+
+.social-icon:hover {
+    filter: brightness(120%);
 }
 
 .cta {
@@ -398,40 +444,40 @@ section.services {
 }
 
 .filter-button {
-padding: 10px 20px;
-background-color: #007bff;
-color: white;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .filter-button:hover {
-background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 .filter__items {
-display: grid;
-grid-template-columns: repeat(5, 100px);
-grid-gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-gap: 10px;
 }
 
 .square {
-width: 100px;
-height: 100px;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #4caf50;
-color: white;
-font-size: 16px;
-text-align: center;
-border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .hidden {
-display: none;
+    display: none;
 }
 
 /*

@@ -13,22 +13,22 @@
   </head>
   <body id="body">
     <div id="mesh"></div>
+    <nav id="menu">
+      <ul class="menu__list">
+        <li class="menu__list__item"><a class="menu__list__item__anchor" href="/services">About</a></li>
+        <li class="menu__list__item"><a class="menu__list__item__anchor" href="/services">Services</a></li>
+        <li class="menu__list__item"><a class="menu__list__item__anchor" href="/contact">Contact</a></li>
+      </ul>
+    </nav>
     <a id="menu-toggle" class="menu-toggle">
       <span class="menu-toggle-bar menu-toggle-bar--top"></span>
       <span class="menu-toggle-bar menu-toggle-bar--middle"></span>
       <span class="menu-toggle-bar menu-toggle-bar--bottom"></span>
     </a>
     <header class="header section">
-      <nav class="header__nav">
+      <div class="header__nav">
         <img class="header__nav__logo" src="/img/logo.svg" />
-        <!-- <ul class="header__nav__list">
-          <li class="header__nav__list__item">
-            <a class="header__nav__list__item__anchor" href="/appointments">Appointments</a>
-            <a class="header__nav__list__item__anchor" href="/services">Services</a>
-            <a class="header__nav__list__item__anchor" href="/contact">Contact</a>
-          </li>
-        </ul> -->
-      </nav>
+      </div>
     </header>
     <section class="splash">
       <h1><span>Bodymind</span><span>Medicine</span></h1>
@@ -81,8 +81,8 @@
       <div id="home__what__anchor__info-pop-up"></div>
     </section>
     <footer>
-      <div class="contact">info@allles.be</div>
       <a href="https://www.instagram.com/allles.be/" class="social-icon social-icon__img"></a>
+      <div class="contact">— info@allles.be</div>
     </footer>
     <script type="module" src="/main.js"></script>
   </body>
