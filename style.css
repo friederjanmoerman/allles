@@ -66,6 +66,9 @@ body {
     display: flex;
     position: fixed;
     right: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .menu__list {
@@ -146,6 +149,14 @@ body.nav-open #menu {
 
 .nav-open .menu-toggle-bar.menu-toggle-bar--bottom {
     transform: translate(0, 0) rotate(-45deg);
+}
+
+.menu__contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -399,8 +410,8 @@ footer {
 }
 
 .social-icon {
-    height: 25px;
-    width: 25px;
+    height: 15px;
+    width: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -412,8 +423,8 @@ footer {
     left: 0;
     top: -1px;
     content: "";
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
     background: url("/img/social-icon__instagram.svg");
     background-size: 100%;
 }
