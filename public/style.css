@@ -483,9 +483,14 @@ section.services {
 .square {
     flex: 1 1 20%;
     display: flex;
-    border: 1px solid #b6994e;
     aspect-ratio: 2/3;
     cursor: pointer;
+    flex-direction: column;
+}
+
+.square img {
+    width: 40%;
+    margin: 0 auto;
 }
 
 .square:hover {
