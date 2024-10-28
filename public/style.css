@@ -451,40 +451,45 @@ section.services {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 20px;
+    margin: 40px 0 20px;
 }
 
 .filter-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    padding: 0;
+    padding-bottom: 10px;
+    font-family: 'Josefin Sans Light';
+    background: none;
+    color: #b6994e;
     border: none;
-    border-radius: 5px;
+    border-bottom: 1px solid transparent;
     cursor: pointer;
     font-size: 16px;
+    text-transform: uppercase;
 }
 
 .filter-button:hover {
-    background-color: #0056b3;
+    border-bottom: 1px solid #b6994e;
+    filter: brightness(120%);
 }
 
 .filter__items {
-    display: grid;
-    grid-template-columns: repeat(5, 100px);
-    grid-gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .square {
-    width: 100px;
-    height: 100px;
+    flex: 1 1 20%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4caf50;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 5px;
+    border: 1px solid #b6994e;
+    aspect-ratio: 2/3;
+    cursor: pointer;
+}
+
+.square:hover {
+    filter: brightness(120%);
 }
 
 .hidden {

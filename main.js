@@ -154,3 +154,27 @@ document.getElementById('menu-toggle')
   .addEventListener('click', function(){
     document.body.classList.toggle('nav-open');
 });
+
+function applyFilter(filter) {
+  const allSquares = document.querySelectorAll(".square")
+
+  // Show all squares by default
+  allSquares.forEach(square => {
+    square.classList.remove("hidden")
+  })
+
+  // Apply the filter logic
+  if (filter === "filterA") {
+    document.querySelectorAll(".categoryB, .categoryC").forEach(square => {
+      square.classList.add("hidden")
+    })
+  } else if (filter === "filterB") {
+    document.querySelectorAll(".categoryA, .categoryC").forEach(square => {
+      square.classList.add("hidden")
+    })
+  } else if (filter === "filterC") {
+    document.querySelectorAll(".categoryA, .categoryB").forEach(square => {
+      square.classList.add("hidden")
+    })
+  }
+}
