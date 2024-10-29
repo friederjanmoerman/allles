@@ -14,25 +14,36 @@
   <body id="body">
     <section class="services">
       <div id="filter__filter">
-        <button class="filter-button" onclick="applyFilter('all')">Show All</button>
-        <button class="filter-button" onclick="applyFilter('filterA')">Personal</button>
-        <button class="filter-button" onclick="applyFilter('filterB')">Group</button>
-        <button class="filter-button" onclick="applyFilter('filterC')">Events</button>
+        <button class="filter-button" onclick="applyFilter('all', this)">Show All</button>
+        <button class="filter-button" onclick="applyFilter('filterA', this)">Personal</button>
+        <button class="filter-button" onclick="applyFilter('filterB', this)">Group</button>
+        <button class="filter-button" onclick="applyFilter('filterC', this)">Events</button>
       </div>
 
       <div class="filter__items">
         <div class="square categoryA">
           <h3>Personal 1</h3>
+          <h4>Personal</h4>
           <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          <button class="filter__items__cta">Book</button>
         </div>
-        <div class="square categoryA"><h3>Personal 2</h3>
+        <div class="square categoryA">
+          <h3>Personal 1</h3>
+          <h4>Personal</h4>
           <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
-        </div> 
-        <div class="square categoryA"><h3>Personal 3</h3>
-          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          <button class="filter__items__cta">Book</button>
         </div>
-        <div class="square categoryA"><h3>Personal 4</h3>
+        <div class="square categoryA">
+          <h3>Personal 1</h3>
+          <h4>Personal</h4>
           <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          <button class="filter__items__cta">Book</button>
+        </div>
+        <div class="square categoryA">
+          <h3>Personal 1</h3>
+          <h4>Personal</h4>
+          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          <button class="filter__items__cta">Book</button>
         </div>
         <div class="square categoryB">Group 1</div>
         <div class="square categoryB">Group 2</div>
@@ -43,29 +54,37 @@
       </div>
     </div>
     <script>
-      function applyFilter(filter) {
-        const allSquares = document.querySelectorAll(".square")
+      function applyFilter(filter, clickedElement) {
+  const allSquares = document.querySelectorAll(".square");
+  const allButtons = document.querySelectorAll(".filter-button"); // Assuming buttons have the class .filter-button
 
-        // Show all squares by default
-        allSquares.forEach(square => {
-          square.classList.remove("hidden")
-        })
+  // Remove the active class from all buttons
+  allButtons.forEach(button => button.classList.remove("active"));
 
-        // Apply the filter logic
-        if (filter === "filterA") {
-          document.querySelectorAll(".categoryB, .categoryC").forEach(square => {
-            square.classList.add("hidden")
-          })
-        } else if (filter === "filterB") {
-          document.querySelectorAll(".categoryA, .categoryC").forEach(square => {
-            square.classList.add("hidden")
-          })
-        } else if (filter === "filterC") {
-          document.querySelectorAll(".categoryA, .categoryB").forEach(square => {
-            square.classList.add("hidden")
-          })
-        }
-      }
+  // Add the active class to the clicked button
+  clickedElement.classList.add("active");
+
+  // Show all squares by default
+  allSquares.forEach(square => {
+    square.classList.remove("hidden");
+  });
+
+  // Apply the filter logic
+  if (filter === "filterA") {
+    document.querySelectorAll(".categoryB, .categoryC").forEach(square => {
+      square.classList.add("hidden");
+    });
+  } else if (filter === "filterB") {
+    document.querySelectorAll(".categoryA, .categoryC").forEach(square => {
+      square.classList.add("hidden");
+    });
+  } else if (filter === "filterC") {
+    document.querySelectorAll(".categoryA, .categoryB").forEach(square => {
+      square.classList.add("hidden");
+    });
+  }
+}
+
     </script>
   </body>
 </html>
