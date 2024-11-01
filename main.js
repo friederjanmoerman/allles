@@ -154,3 +154,21 @@ document.getElementById('menu-toggle')
   .addEventListener('click', function(){
     document.body.classList.toggle('nav-open');
 });
+
+document.getElementById("about-link").addEventListener("click", function (event) {
+  event.preventDefault(); // Prevent the default link behavior
+
+  // Get the Y position of the "about" section
+  const aboutSection = document.getElementById("about");
+  const yOffset = aboutSection.getBoundingClientRect().top + window.pageYOffset;
+
+  // Smoothly scroll to the Y position
+  window.scrollTo({
+    top: yOffset,
+    behavior: "smooth"
+  });
+
+  // Update the URL without page reload
+  history.pushState(null, null, "/about");
+});
+
