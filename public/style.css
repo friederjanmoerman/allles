@@ -513,9 +513,8 @@ section.services {
 .filter__items {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    margin: 0 auto;
 }
 
 .filter__items__cta {
@@ -535,7 +534,8 @@ section.services {
 }
 
 .square {
-    flex: 1 1 20%;
+    flex: 0 1 calc(25% - 40px);
+    margin: 0 20px;
     display: flex;
     aspect-ratio: 4/5;
     flex-direction: column;
@@ -596,7 +596,7 @@ label {
     background: #b6994e;
     font-weight: 400;
     color:#000000;
-    max-width: 200px;
+    width: 100%;
     padding: 4px;
     margin: 20px 0;
     cursor: pointer;
