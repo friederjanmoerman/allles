@@ -566,7 +566,7 @@ section.services {
     display: none;
 }
 
-.contact {
+.section__contact {
     margin-top: 100px;
 }
 
@@ -594,6 +594,10 @@ button {
     padding: 4px;
     margin: 20px 0;
     cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(120%);
 }
 
 input, textarea {
