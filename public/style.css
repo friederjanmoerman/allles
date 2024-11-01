@@ -342,6 +342,13 @@ h2 {
     line-height: 1.2em;
 }
 
+.home__what__intro {
+    line-height: 1.4em;
+    font-size: 17px;
+    color: #b6994e;
+    margin-bottom: 24px;
+}
+
 .home__what__list a:hover {
     filter: brightness(120%);
 }
@@ -351,8 +358,9 @@ h2 {
     position: fixed;
     right: 2%;
     bottom: 10%;
-    font-size: 25px;
-    color: #C0C0C0;
+    font-size: 17px;
+    line-height: 1.7em;
+    color: #b6994e;
     z-index: 4000;
     max-width: 300px;
     transform: translateY(50%);
@@ -523,6 +531,21 @@ section.services {
 
     font-size: 14px;
     line-height: 23px;
+
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease; /* Smooth fade */
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+  
+/* Active animation styling */
+.square.fade-in {
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .square img {
