@@ -56,7 +56,7 @@ body {
     margin: 0;
     background: #fff;
     background: rgb(0,0,0);
-    font-size: 20px;
+    font-size: 17px;
     font-family: "Noto Sans", sans-serif;
     font-weight: 100;
     line-height: 1.7em;
@@ -304,6 +304,12 @@ h2 {
     width: 495px;
 }
 
+.home__why__content__text img {
+    height: 16px;
+    margin-bottom: -1px;
+    margin-right: 2px;
+}
+
 .services__title__content__text {
     width: auto;
     margin: 0;
@@ -365,7 +371,7 @@ h2 {
     bottom: 10%;
     font-size: 17px;
     line-height: 1.7em;
-    color: #b6994e;
+    color: #C0C0C0;
     z-index: 4000;
     max-width: 300px;
     transform: translateY(50%);
@@ -427,9 +433,9 @@ footer {
 }
 
 .contact {
-    font-size: 14px;
+    font-size: 12px;
     color: #b6994e;
-    font-family: 'Josefin Sans Light';
+    font-weight: 400;
 }
 
 .contact a:active {
