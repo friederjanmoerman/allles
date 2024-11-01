@@ -586,7 +586,7 @@ label {
     margin-bottom: 5px;
 }
 
-button {
+.button {
     text-transform: uppercase;
     font-size: 12px;
     border-radius: 20px;
