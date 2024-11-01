@@ -158,6 +158,8 @@ document.getElementById('menu-toggle')
 document.getElementById("about-link").addEventListener("click", function (event) {
   event.preventDefault(); // Prevent the default link behavior
 
+  document.body.classList.toggle('nav-open');
+
   // Get the Y position of the "about" section
   const aboutSection = document.getElementById("about");
   const yOffset = aboutSection.getBoundingClientRect().top + window.pageYOffset;

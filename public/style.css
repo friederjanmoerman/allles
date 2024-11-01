@@ -566,6 +566,48 @@ section.services {
     display: none;
 }
 
+.contact {
+    margin-top: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b6994e;
+    font-weight: 400;
+    color:#000000;
+    max-width: 200px;
+    padding: 4px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+input, textarea {
+    max-width: 400px;
+    width: 100%;
+    padding: 4px;
+    margin: 20px 0;
+    color: #b6994e;
+    border: 1px solid #b6994e;
+    background: transparent;
+    font-family: 'Josefin Sans Light';
+    font-size: 14px;
+}
+
 /*
  * Responsive
  */
