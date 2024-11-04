@@ -12,6 +12,33 @@
     />
   </head>
   <body id="body">
+    <nav id="menu">
+      <ul class="menu__list">
+        <li class="menu__list__item">
+          <a class="menu__list__item__anchor" href="#about" id="about-link">About</a>
+        </li>
+        <li class="menu__list__item">
+          <a class="menu__list__item__anchor" href="/services">Services</a>
+        </li>
+        <li class="menu__list__item">
+          <a class="menu__list__item__anchor" href="/contact">Contact</a>
+        </li>
+      </ul>
+      <div class="menu__contact">
+        <a href="https://www.instagram.com/allles.be/" class="social-icon social-icon__img"></a>
+        <div class="contact">info@allles.be</div>
+      </div>
+    </nav>
+    <a id="menu-toggle" class="menu-toggle">
+      <span class="menu-toggle-bar menu-toggle-bar--top"></span>
+      <span class="menu-toggle-bar menu-toggle-bar--middle"></span>
+      <span class="menu-toggle-bar menu-toggle-bar--bottom"></span>
+    </a>
+    <header class="header section">
+      <div class="header__nav">
+        <a href="/"><img class="header__nav__logo" src="/img/logo.svg" /></a>
+      </div>
+    </header>
     <section class="services">
       <div id="filter__filter">
         <button class="filter-button active" onclick="applyFilter('all', this)">Show All</button>
@@ -22,59 +49,78 @@
 
       <div class="filter__items">
         <div class="square categoryA">
-          <h3>Personal 1</h3>
-          <h4>Personal</h4>
-          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          <div class="square__content">
+            <h3>Treatments</h3>
+            <h4>Personal</h4>
+            <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          </div>
           <button class="filter__items__cta button">Book</button>
         </div>
         <div class="square categoryA">
-          <h3>Personal 2</h3>
-          <h4>Personal</h4>
-          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          <div class="square__content">
+            <h3>Personal Training</h3>
+            <h4>Personal</h4>
+            <p>Exercise routines, mind-body techniques, and lifestyle coaching all tailored to your unique journey.</p>
+          </div>
           <button class="filter__items__cta button">Book</button>
         </div>
         <div class="square categoryA">
-          <h3>Personal 3</h3>
-          <h4>Personal</h4>
-          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          <div class="square__content">
+            <h3>Small/Private Group</h3>
+            <h4>Personal</h4>
+            <p>Perfect for friends, teambuilding, or workplace programs, with a focus on fitness, mindfulness, or team cohesion.</p>
+          </div>
           <button class="filter__items__cta button">Book</button>
         </div>
         <div class="square categoryA">
-          <h3>Personal 4</h3>
-          <h4>Personal</h4>
-          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+          <div class="square__content">
+            <h3>Courses/Lectures</h3>
+            <h4>Personal</h4>
+            <p>Workshops on nutrition, breathwork, and mindful movement for stress management, focus and overall health..</p>
+          </div>
           <button class="filter__items__cta button">Book</button>
         </div>
-        
-        <div class="square categoryB"><h3>Yoga</h3>
-          <h4>Group</h4>
-          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
+        <div class="square categoryB">
+          <div class="square__content">
+            <h3>Yoga</h3>
+            <h4>Group</h4>
+            <p>An invitation to come home into your body.</p>
+          </div>
           <button class="filter__items__cta button">Book</button>
         </div>
-        <div class="square categoryB"><h3>Pilates</h3>
-          <h4>Group</h4>
-          <p>Building strong core muscles in a balanced fashion.</p>
+        <div class="square categoryB">
+          <div class="square__content">
+            <h3>Pilates</h3>
+            <h4>Group</h4>
+            <p>Building strong core muscles in a balanced fashion.</p>
+          </div>
           <button class="filter__items__cta button">Book</button>
         </div>
-        <div class="square categoryB"><h3>Sculpt</h3>
-          <h4>Group</h4>
-          <p>Full body strength workout to tone the muscles and improve mobility.</p>
+        <div class="square categoryB">
+          <div class="square__content">
+            <h3>Sculpt</h3>
+            <h4>Group</h4>
+            <p>Full body strength workout to tone the muscles and improve mobility.</p>
+          </div>
           <button class="filter__items__cta button">Book</button>
         </div>
-        <div class="square categoryB"><h3>Burn</h3>
-          <h4>Group</h4>
-          <p>A dance workout involving strength and endurance building elements.</p>
+        <div class="square categoryB">
+          <div class="square__content">
+            <h3>Burn</h3>
+            <h4>Group</h4>
+            <p>A dance workout involving strength and endurance building elements.</p>
+          </div>
           <button class="filter__items__cta button">Book</button>
         </div>
 
-        <div class="square categoryC"><h3>Events 1</h3>
-          <h4>Events</h4>
-          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
-          <button class="filter__items__cta" button>Book</button></div>
-        <div class="square categoryC"><h3>Events 2</h3>
-          <h4>Events</h4>
-          <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
-          <button class="filter__items__cta button">Book</button></div>
+        <div class="square categoryC">
+          <div class="square__content">
+            <h3>Moxa Ceremony</h3>
+            <h4>Events</h4>
+            <p>A guided meditation and the deep warmth of Moxa to support you all winter long. Experience this immunity boost like a natural flu shot.</p>
+          </div>
+          <button class="filter__items__cta" button>Book</button>
+        </div>
       </div>
     </div>
     <script>
