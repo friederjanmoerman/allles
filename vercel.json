@@ -1,9 +1,7 @@
 {
   "rewrites": [
     { "source": "/services", "destination": "/services.html" },
-    { "source": "/contact", "destination": "/contact.html" }
-  ],
-  "static": {
-    "directory": "public"
-  }
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
