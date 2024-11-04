@@ -41,10 +41,10 @@
     </header>
     <section class="services">
       <div id="filter__filter">
-        <button class="filter-button active" onclick="applyFilter('all', this)">Show All</button>
-        <button class="filter-button" onclick="applyFilter('filterA', this)">Personal</button>
-        <button class="filter-button" onclick="applyFilter('filterB', this)">Group</button>
-        <button class="filter-button" onclick="applyFilter('filterC', this)">Events</button>
+        <button class="filter-button active" data-filter="all">Show All</button>
+        <button class="filter-button" data-filter="filterA">Personal</button>
+        <button class="filter-button" data-filter="filterB">Group</button>
+        <button class="filter-button" data-filter="filterC">Events</button>
       </div>
 
       <div class="filter__items">
@@ -54,7 +54,7 @@
             <h4>Personal</h4>
             <p>The medical practice to balance the flow of energy within the body by the healing power of touch.</p>
           </div>
-          <button class="filter__items__cta button">Book</button>
+          <button class="filter__items__cta button">More info</button>
         </div>
         <div class="square categoryA">
           <div class="square__content">
@@ -62,23 +62,28 @@
             <h4>Personal</h4>
             <p>Exercise routines, mind-body techniques, and lifestyle coaching all tailored to your unique journey.</p>
           </div>
-          <button class="filter__items__cta button">Book</button>
+          <button class="filter__items__cta button">More info</button>
         </div>
         <div class="square categoryA">
           <div class="square__content">
             <h3>Small/Private Group</h3>
             <h4>Personal</h4>
-            <p>Perfect for friends, teambuilding, or workplace programs, with a focus on fitness, mindfulness, or team cohesion.</p>
+            <p>
+              Perfect for friends, teambuilding, or workplace programs, with a focus on fitness, mindfulness, or team
+              cohesion.
+            </p>
           </div>
-          <button class="filter__items__cta button">Book</button>
+          <button class="filter__items__cta button">More info</button>
         </div>
         <div class="square categoryA">
           <div class="square__content">
             <h3>Courses/Lectures</h3>
             <h4>Personal</h4>
-            <p>Workshops on nutrition, breathwork, and mindful movement for stress management, focus and overall health..</p>
+            <p>
+              Workshops on nutrition, breathwork, and mindful movement for stress management, focus and overall health..
+            </p>
           </div>
-          <button class="filter__items__cta button">Book</button>
+          <button class="filter__items__cta button">More info</button>
         </div>
         <div class="square categoryB">
           <div class="square__content">
@@ -86,7 +91,7 @@
             <h4>Group</h4>
             <p>An invitation to come home into your body.</p>
           </div>
-          <button class="filter__items__cta button">Book</button>
+          <button class="filter__items__cta button">More info</button>
         </div>
         <div class="square categoryB">
           <div class="square__content">
@@ -94,7 +99,7 @@
             <h4>Group</h4>
             <p>Building strong core muscles in a balanced fashion.</p>
           </div>
-          <button class="filter__items__cta button">Book</button>
+          <button class="filter__items__cta button">More info</button>
         </div>
         <div class="square categoryB">
           <div class="square__content">
@@ -102,7 +107,7 @@
             <h4>Group</h4>
             <p>Full body strength workout to tone the muscles and improve mobility.</p>
           </div>
-          <button class="filter__items__cta button">Book</button>
+          <button class="filter__items__cta button">More info</button>
         </div>
         <div class="square categoryB">
           <div class="square__content">
@@ -110,81 +115,27 @@
             <h4>Group</h4>
             <p>A dance workout involving strength and endurance building elements.</p>
           </div>
-          <button class="filter__items__cta button">Book</button>
+          <button class="filter__items__cta button">More info</button>
         </div>
 
         <div class="square categoryC">
           <div class="square__content">
             <h3>Moxa Ceremony</h3>
             <h4>Events</h4>
-            <p>A guided meditation and the deep warmth of Moxa to support you all winter long. Experience this immunity boost like a natural flu shot.</p>
+            <p>
+              A guided meditation and the deep warmth of Moxa to support you all winter long. Experience this immunity
+              boost like a natural flu shot.
+            </p>
           </div>
-          <button class="filter__items__cta" button>Book</button>
+          <button class="filter__items__cta" button>More info</button>
         </div>
       </div>
-    </div>
-    <script>
-      // Function to add fade-in effect with dynamic delay
-function addFadeInEffect() {
-  const visibleSquares = document.querySelectorAll(".square:not(.hidden)");
+    </section>
 
-  // Remove the fade-in class to reset animation
-  visibleSquares.forEach(square => {
-    square.classList.remove("fade-in");
-    square.style.animationDelay = ""; // Clear previous delays
-  });
-
-  // Use a slight timeout to ensure the class removal takes effect
-  setTimeout(() => {
-    visibleSquares.forEach((square, index) => {
-      square.classList.add("fade-in");
-      square.style.animationDelay = `${index * 0.1}s`; // 0.1s delay per square
-    });
-  }, 10); // Small delay to reset the animation
-}
-
-// Function to apply filter and fade-in effect on button click
-function applyFilter(filter, clickedElement) {
-  const allSquares = document.querySelectorAll(".square");
-  const allButtons = document.querySelectorAll(".filter-button");
-
-  // Remove the active class from all buttons
-  allButtons.forEach(button => button.classList.remove("active"));
-
-  // Add the active class to the clicked button
-  clickedElement.classList.add("active");
-
-  // Show all squares by default and remove fade-in classes
-  allSquares.forEach(square => {
-    square.classList.remove("hidden", "fade-in");
-    square.style.animationDelay = ""; // Clear previous delays
-  });
-
-  // Apply the filter logic
-  if (filter === "filterA") {
-    document.querySelectorAll(".categoryB, .categoryC").forEach(square => {
-      square.classList.add("hidden");
-    });
-  } else if (filter === "filterB") {
-    document.querySelectorAll(".categoryA, .categoryC").forEach(square => {
-      square.classList.add("hidden");
-    });
-  } else if (filter === "filterC") {
-    document.querySelectorAll(".categoryA, .categoryB").forEach(square => {
-      square.classList.add("hidden");
-    });
-  }
-
-  // Apply the fade-in effect with delay to the filtered squares
-  addFadeInEffect();
-}
-
-// Add fade-in effect on page load
-window.onload = addFadeInEffect;
-
-
-
-
-    </script>
+    <footer>
+      <a href="https://www.instagram.com/allles.be/" class="social-icon social-icon__img"></a>
+      <div class="contact">info@allles.be</div>
+    </footer>
+    <script type="module" src="/../main.js"></script>
   </body>
 </html>

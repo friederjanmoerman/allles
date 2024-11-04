@@ -12,11 +12,14 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 const container = document.getElementById('mesh');
-document.body.appendChild(container);
+
+if (container) {
+  document.body.appendChild(container);
+  container.appendChild(renderer.domElement);
+}
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-container.appendChild(renderer.domElement);
 
 camera.position.set(0, 1, 2);
 
@@ -174,3 +177,72 @@ document.getElementById("about-link").addEventListener("click", function (event)
   history.pushState(null, null, "/about");
 });
 
+
+// Function to add fade-in effect with dynamic delay
+function addFadeInEffect() {
+  const visibleSquares = document.querySelectorAll(".square:not(.hidden)");
+
+  // Remove the fade-in class to reset animation
+  visibleSquares.forEach(square => {
+    square.classList.remove("fade-in");
+    square.style.animationDelay = ""; // Clear previous delays
+  });
+
+  // Use a slight timeout to ensure the class removal takes effect
+  setTimeout(() => {
+    visibleSquares.forEach((square, index) => {
+      square.classList.add("fade-in");
+      square.style.animationDelay = `${index * 0.1}s`; // 0.1s delay per square
+    });
+  }, 10); // Small delay to reset the animation
+}
+
+// Function to apply filter and fade-in effect on button click
+function applyFilter(filter, clickedElement) {
+  const allSquares = document.querySelectorAll(".square");
+  const allButtons = document.querySelectorAll(".filter-button");
+
+  // Remove the active class from all buttons
+  allButtons.forEach(button => button.classList.remove("active"));
+
+  // Add the active class to the clicked button
+  clickedElement.classList.add("active");
+
+  // Show all squares by default and remove fade-in classes
+  allSquares.forEach(square => {
+    square.classList.remove("hidden", "fade-in");
+    square.style.animationDelay = ""; // Clear previous delays
+  });
+
+  // Apply the filter logic
+  if (filter === "filterA") {
+    document.querySelectorAll(".categoryB, .categoryC").forEach(square => {
+      square.classList.add("hidden");
+    });
+  } else if (filter === "filterB") {
+    document.querySelectorAll(".categoryA, .categoryC").forEach(square => {
+      square.classList.add("hidden");
+    });
+  } else if (filter === "filterC") {
+    document.querySelectorAll(".categoryA, .categoryB").forEach(square => {
+      square.classList.add("hidden");
+    });
+  }
+
+  // Apply the fade-in effect with delay to the filtered squares
+  addFadeInEffect();
+}
+
+// Query all buttons and add a click event listener to each
+document.querySelectorAll(".filter-button").forEach(button => {
+  button.addEventListener("click", function() {
+    const filter = this.getAttribute("data-filter"); // Assumes a data-filter attribute on the buttons
+    applyFilter(filter, this);
+  });
+});
+
+// Add fade-in effect on page load
+window.onload = addFadeInEffect;
+
+
+console.log('loaded');
