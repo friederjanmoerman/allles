@@ -555,6 +555,29 @@ section.services {
     flex-direction: column;
 }
 
+.services__calendar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.services__calendar__item {
+    flex: 0 1 calc(25% - 40px);
+    margin: 0 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.services__calendar__date {
+    text-transform: uppercase;
+}
+
+.services__calendar__location {
+    font-weight: 400;
+    font-size: 14px;
+    color: #b6994e;
+}
 
 /* Fade-in animation */
 @keyframes fadeIn {
@@ -608,6 +631,7 @@ label {
     padding: 4px;
     margin: 20px 0;
     cursor: pointer;
+    text-decoration: none;
 }
 
 button:hover {
