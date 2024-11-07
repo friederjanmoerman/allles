@@ -686,6 +686,9 @@ textarea {
     .home__what__list a {
         font-size: 3rem;
     }
+    body.nav-open #menu {
+        width: 30vw;
+    }
 }
 
 @media (max-width: 768px) {
@@ -702,6 +705,20 @@ textarea {
     }
     .home__what__anchor-info, .home__why__content__text {
         width: 80%;
+    }
+    body.nav-open #menu {
+        width: 40vw;
+    }
+}
+
+
+@media (max-width: 540px) {
+    body.nav-open #menu {
+        width: 100vw;
+    }
+    .menu__list {
+        text-align: center;
+        padding: 0;
     }
 }
 
