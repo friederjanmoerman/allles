@@ -686,20 +686,19 @@ textarea {
     .home__what__list a {
         font-size: 3rem;
     }
-    .splash h1 {
-        font-size: 80px;
-    }
 }
 
 @media (max-width: 768px) {
     .splash {
         z-index: 1200;
+        align-items: flex-start;
     }
     .services__item {
         flex: 1 1 100%;
     }
     .splash h1 {
         width: auto;
+        font-size: 80px;
     }
     .home__what__anchor-info, .home__why__content__text {
         width: 80%;
