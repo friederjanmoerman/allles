@@ -100,10 +100,24 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Throttled resize event listener
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+  }, 200);
+});
+
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
+
+animate();
+
 
 /*
  * Toggle on hover
@@ -245,5 +259,3 @@ window.onload = function() {
   addFadeInEffect();     // Adds fade-in effect
   animate();
 };
-
-window.addEventListener('resize', animate);
