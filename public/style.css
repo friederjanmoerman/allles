@@ -704,7 +704,9 @@ textarea {
 }
 
 @media (max-width: 470px) {
-    
+    .splash {
+        z-index: 1200;
+    }
     .splash h1 {
         font-size: 60px;
     }
