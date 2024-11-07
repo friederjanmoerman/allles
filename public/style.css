@@ -244,23 +244,20 @@ h4 {
     filter: brightness(120%);
 }
 
-section {
+section, footer {
     position: relative;
     display: flex;
-    width: 100%;
     max-width: 1024px;
     margin: 0 auto;
     flex-direction: column;
 }
 
-header {
-    width: 100%;
+footer {
+    flex-direction: row;
 }
 
-footer {
+header {
     width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
 }
 
 .splash {
@@ -680,15 +677,18 @@ textarea {
 }
 
 @media (max-width: 1200px) {
-    header, section, footer {
+    .header__nav, section, footer {
         padding: 0 5%;
         max-width: none;
     }
     .show-on-small-screen {
         display: block;
     }
-    .home__what__anchor__info {
-        width: 495px;
+    .home__what__anchor-info {
+        width: 80%;
+    }
+    .home__what__list a {
+        font-size: 3rem;
     }
 }
 

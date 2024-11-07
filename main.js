@@ -105,8 +105,6 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-animate();
-
 /*
  * Toggle on hover
  */
@@ -242,8 +240,10 @@ document.querySelectorAll(".filter-button").forEach(button => {
   });
 });
 
-
 window.onload = function() {
   window.scrollTo(0, 0); // Scrolls to the top of the page
   addFadeInEffect();     // Adds fade-in effect
+  animate();
 };
+
+window.addEventListener('resize', animate);
