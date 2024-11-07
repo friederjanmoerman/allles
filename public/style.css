@@ -291,10 +291,6 @@ header {
     color:#806837;
 }
 
-.home__why__content {
-    width: 495px;
-}
-
 h2 {
     font-size: 40px;
     line-height: 1.2em;
@@ -684,17 +680,33 @@ textarea {
     .show-on-small-screen {
         display: block;
     }
-    .home__what__anchor-info {
-        width: 80%;
+    .home__what__anchor-info, .home__why__content__text {
+        width: 60%;
     }
     .home__what__list a {
         font-size: 3rem;
+    }
+    .splash h1 {
+        font-size: 80px;
     }
 }
 
 @media (max-width: 768px) {
     .services__item {
         flex: 1 1 100%;
+    }
+    .splash h1 {
+        width: auto;
+    }
+    .home__what__anchor-info, .home__why__content__text {
+        width: 80%;
+    }
+}
+
+@media (max-width: 470px) {
+    
+    .splash h1 {
+        font-size: 60px;
     }
 }
 
