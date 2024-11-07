@@ -86,6 +86,19 @@ window.addEventListener('scroll', () => {
   }
 });
 
+window.addEventListener('scroll', function() {
+  const mesh = document.getElementById('mesh');
+  const scrollTop = window.scrollY;
+  const viewportHeight = window.innerHeight;
+
+  // Calculate scroll position in terms of percentage of 1 viewport height (i.e., 100vh)
+  const scrollFraction = scrollTop / viewportHeight;
+
+  // Move mesh by 2/3 of the viewport width when scrolled 1 viewport height (100%)
+  if (scrollFraction <= 1) {
+    mesh.style.transform = `translateX(${scrollFraction * (1 / 4) * 100}vw)`;
+  }
+});
 
 function animate() {
     requestAnimationFrame(animate);
@@ -139,19 +152,7 @@ const checkHoverClass = () => {
 
 
 
-window.addEventListener('scroll', function() {
-  const mesh = document.getElementById('mesh');
-  const scrollTop = window.scrollY;
-  const viewportHeight = window.innerHeight;
 
-  // Calculate scroll position in terms of percentage of 1 viewport height (i.e., 100vh)
-  const scrollFraction = scrollTop / viewportHeight;
-
-  // Move mesh by 2/3 of the viewport width when scrolled 1 viewport height (100%)
-  if (scrollFraction <= 1) {
-    mesh.style.transform = `translateX(${scrollFraction * (1 / 4) * 100}vw)`;
-  }
-});
 
 document.getElementById('menu-toggle')
   .addEventListener('click', function(){
@@ -241,8 +242,8 @@ document.querySelectorAll(".filter-button").forEach(button => {
   });
 });
 
-// Add fade-in effect on page load
-window.onload = addFadeInEffect;
 
-
-console.log('loaded');
+window.onload = function() {
+  window.scrollTo(0, 0); // Scrolls to the top of the page
+  addFadeInEffect();     // Adds fade-in effect
+};

@@ -206,7 +206,6 @@ h4 {
 .header {
     position: absolute;
     top: 20px;
-    width: 100vw;
     z-index: 3000;
 }
 
@@ -252,6 +251,16 @@ section {
     max-width: 1024px;
     margin: 0 auto;
     flex-direction: column;
+}
+
+header {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .splash {
@@ -610,11 +619,15 @@ section.services {
 form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 550px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+    flex: 1;
+    font-weight: 400;
+    font-size: 14px;
+    color: #b6994e;
 }
 
 .button {
@@ -639,15 +652,23 @@ button:hover {
 }
 
 input, textarea {
-    max-width: 400px;
     width: 100%;
     padding: 4px;
-    margin: 20px 0;
     color: #b6994e;
     border: 1px solid #b6994e;
     background: transparent;
     font-family: 'Josefin Sans Light';
     font-size: 14px;
+}
+
+input, textarea {
+    border-radius: 20px;
+    margin: 1em 0;
+    padding: 10px 10px;
+}
+
+textarea {
+    border-radius: 20px 20px 0 20px;
 }
 
 /*
@@ -659,8 +680,15 @@ input, textarea {
 }
 
 @media (max-width: 1200px) {
+    header, section, footer {
+        padding: 0 5%;
+        max-width: none;
+    }
     .show-on-small-screen {
         display: block;
+    }
+    .home__what__anchor__info {
+        width: 495px;
     }
 }
 
@@ -669,3 +697,4 @@ input, textarea {
         flex: 1 1 100%;
     }
 }
+
