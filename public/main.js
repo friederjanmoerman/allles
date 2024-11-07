@@ -1,5 +1,5 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.module.js";
+import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/GLTFLoader.js";
 
 const womanUrl = new URL('/woman.glb', import.meta.url);
 
@@ -24,13 +24,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.set(0, 1, 2);
 
 // Lights
-const mainLight = new THREE.PointLight('white', 10);
-mainLight.position.set(5, 5, 0);
+const mainLight = new THREE.PointLight('white', 1);
+mainLight.position.set(10, 5, 0);
 
-const secondLight = new THREE.PointLight('#fde58b', 5);
+const secondLight = new THREE.PointLight('#fde58b', 0.2);
 secondLight.position.set(-5, 5, 0);
 
-const ambientLight = new THREE.AmbientLight('white', 0.5);
+const ambientLight = new THREE.AmbientLight('white', 0.1);
 
 scene.add(mainLight, secondLight, ambientLight);
 
