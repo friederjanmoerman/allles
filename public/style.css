@@ -706,9 +706,11 @@ textarea {
 }
 
 @media (max-width: 470px) {
-    
     .splash h1 {
-        font-size: 60px;
+        font-size:50px;
+    }
+    .home__what__anchor-info, .home__why__content__text {
+        width: 90%;
     }
 }
 
