@@ -229,15 +229,19 @@ function applyFilter(filter, clickedElement) {
 
   // Apply the filter logic
   if (filter === "filterA") {
-    document.querySelectorAll(".categoryB, .categoryC").forEach(square => {
+    document.querySelectorAll(".categoryB, .categoryC, .categoryD").forEach(square => {
       square.classList.add("hidden");
     });
   } else if (filter === "filterB") {
-    document.querySelectorAll(".categoryA, .categoryC").forEach(square => {
+    document.querySelectorAll(".categoryA, .categoryC, .categoryD").forEach(square => {
       square.classList.add("hidden");
     });
   } else if (filter === "filterC") {
-    document.querySelectorAll(".categoryA, .categoryB").forEach(square => {
+    document.querySelectorAll(".categoryA, .categoryB, .categoryD").forEach(square => {
+      square.classList.add("hidden");
+    });
+  } else if (filter === "filterD") {
+    document.querySelectorAll(".categoryA, .categoryB, .categoryC").forEach(square => {
       square.classList.add("hidden");
     });
   }
