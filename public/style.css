@@ -749,9 +749,6 @@ textarea {
     .services__calendar__item {
         flex: 0 1 calc(50% - 40px);
     }
-    .filter-button {
-        font-size: 10px;
-    }
 }
 
 
@@ -767,6 +764,10 @@ textarea {
         flex: 0 1 100%;
         margin: 0 0 40px;
         aspect-ratio: auto;
+    }
+
+    .filter-button {
+        font-size: 10px;
     }
 }
 

@@ -263,6 +263,13 @@ document.querySelectorAll(".filter-button").forEach(button => {
   });
 });
 
+// Check URL for "events" and apply filter C on page load if found
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname.includes("/services/events")) {
+    applyFilter("filterC"); // Apply category C filter
+  }
+});
+
 window.onload = function() {
   window.scrollTo(0, 0); // Scrolls to the top of the page
   addFadeInEffect();     // Adds fade-in effect
