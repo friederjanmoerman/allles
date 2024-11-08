@@ -2,6 +2,10 @@
   "rewrites": [
     { "source": "/services", "destination": "services.html" },
     { "source": "/contact", "destination": "contact.html" },
-    { "source": "/services/group-pilates", "destination": "group-pilates.html" }
+
+    { "source": "/services/group-burn", "destination": "group-burn.html" },
+    { "source": "/services/group-pilates", "destination": "group-pilates.html" },
+    { "source": "/services/group-sculpt", "destination": "group-sculpt.html" },
+    { "source": "/services/group-yoga", "destination": "group-yoga.html" }
   ]
 }
