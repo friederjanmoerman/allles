@@ -162,10 +162,6 @@ const checkHoverClass = () => {
   }
 };
 
-
-
-
-
 document.getElementById('menu-toggle')
   .addEventListener('click', function(){
     document.body.classList.toggle('nav-open');
@@ -200,66 +196,68 @@ if (aboutLink) {
 function addFadeInEffect() {
   const visibleSquares = document.querySelectorAll(".square:not(.hidden)");
 
-  // Remove the fade-in class to reset animation
   visibleSquares.forEach(square => {
     square.classList.remove("fade-in");
-    square.style.animationDelay = ""; // Clear previous delays
+    square.style.animationDelay = "";
   });
 
-  // Use a slight timeout to ensure the class removal takes effect
   setTimeout(() => {
     visibleSquares.forEach((square, index) => {
       square.classList.add("fade-in");
-      square.style.animationDelay = `${index * 0.1}s`; // 0.1s delay per square
+      square.style.animationDelay = `${index * 0.1}s`;
     });
-  }, 10); // Small delay to reset the animation
+  }, 10);
 }
 
-// Function to apply filter and fade-in effect on button click
-function applyFilter(filter, clickedElement) {
+// Function to apply filter and fade-in effect
+function applyFilter(filter, clickedElement = null, updateUrl = false) {
   const allSquares = document.querySelectorAll(".square");
   const allButtons = document.querySelectorAll(".filter-button");
 
-  // Remove the active class from all buttons
+  // Remove active class from all buttons
   allButtons.forEach(button => button.classList.remove("active"));
 
-  // Add the active class to the clicked button
-  clickedElement.classList.add("active");
+  // Add active class to clicked button
+  if (clickedElement) {
+    clickedElement.classList.add("active");
+  } else {
+    const filterButton = document.querySelector(`.filter-button[data-filter="${filter}"]`);
+    if (filterButton) {
+      filterButton.classList.add("active");
+    }
+  }
 
   // Show all squares by default and remove fade-in classes
   allSquares.forEach(square => {
     square.classList.remove("hidden", "fade-in");
-    square.style.animationDelay = ""; // Clear previous delays
+    square.style.animationDelay = "";
   });
 
-  // Apply the filter logic
-  if (filter === "filterA") {
-    document.querySelectorAll(".categoryB, .categoryC, .categoryD").forEach(square => {
-      square.classList.add("hidden");
-    });
-  } else if (filter === "filterB") {
-    document.querySelectorAll(".categoryA, .categoryC, .categoryD").forEach(square => {
-      square.classList.add("hidden");
-    });
-  } else if (filter === "filterC") {
-    document.querySelectorAll(".categoryA, .categoryB, .categoryD").forEach(square => {
-      square.classList.add("hidden");
-    });
-  } else if (filter === "filterD") {
-    document.querySelectorAll(".categoryA, .categoryB, .categoryC").forEach(square => {
-      square.classList.add("hidden");
+  // Hide squares that do not match the selected filter
+  if (filter !== "all") { // Assuming "all" shows all items
+    allSquares.forEach(square => {
+      if (!square.classList.contains(filter)) {
+        square.classList.add("hidden");
+      }
     });
   }
 
-  // Apply the fade-in effect with delay to the filtered squares
+  // Apply fade-in effect
   addFadeInEffect();
+
+  // Update URL if required
+  if (updateUrl) {
+    const url = new URL(window.location);
+    url.searchParams.set('filter', filter);
+    window.history.replaceState({}, '', url);
+  }
 }
 
-// Query all buttons and add a click event listener to each
+// Add click event listener to each filter button
 document.querySelectorAll(".filter-button").forEach(button => {
   button.addEventListener("click", function() {
-    const filter = this.getAttribute("data-filter"); // Assumes a data-filter attribute on the buttons
-    applyFilter(filter, this);
+    const filter = this.getAttribute("data-filter"); // Uses data-filter attribute on buttons
+    applyFilter(filter, this, true); // Pass 'true' to update the URL
   });
 });
 
@@ -268,10 +266,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const filter = urlParams.get("filter");
 
-  if (filter === "events") {
-    applyFilter("filterC");
+  if (filter) {
+    applyFilter(filter);
   }
 });
+
+
+
 
 window.onload = function() {
   window.scrollTo(0, 0); // Scrolls to the top of the page
