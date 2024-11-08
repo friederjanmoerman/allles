@@ -41,7 +41,7 @@
     0%{background-position:0% 50%}
     50%{background-position:45% 50%}
     100%{background-position:0% 50%}
-}
+} */
 
 html {
     scroll-behavior: smooth;
@@ -63,10 +63,7 @@ body {
     color: #C0C0C0;
     background: linear-gradient(270deg, #765b22, #000000);
     background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+    background-position: 20% 50%;
 }
 
 #menu {
@@ -752,6 +749,9 @@ textarea {
     .services__calendar__item {
         flex: 0 1 calc(50% - 40px);
     }
+    .filter-button {
+        font-size: 10px;
+    }
 }
 
 
@@ -777,7 +777,6 @@ textarea {
     .home__what__anchor-info, .home__why__content__text {
         width: 90%;
     }
-
     .services__calendar__item {
         flex: 0 1 100%;
     }
