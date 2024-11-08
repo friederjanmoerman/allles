@@ -263,10 +263,13 @@ document.querySelectorAll(".filter-button").forEach(button => {
   });
 });
 
-// Check URL for "events" and apply filter C on page load if found
+// Check URL for "filter" parameter and apply corresponding filter on page load
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.location.pathname.includes("/services/events")) {
-    applyFilter("filterC"); // Apply category C filter
+  const urlParams = new URLSearchParams(window.location.search);
+  const filter = urlParams.get("filter");
+
+  if (filter === "events") {
+    applyFilter("filterC");
   }
 });
 
