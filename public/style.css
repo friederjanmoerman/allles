@@ -703,6 +703,9 @@ textarea {
         margin: 0 30px 40px;
         aspect-ratio: 10 / 13;
     }
+    .services__calendar__item {
+        flex: 0 1 calc(33% - 40px);
+    }
 }
 
 @media (max-width: 980px) {
@@ -746,6 +749,9 @@ textarea {
         margin: 0 20px 40px;
         aspect-ratio: 2/3;
     }
+    .services__calendar__item {
+        flex: 0 1 calc(50% - 40px);
+    }
 }
 
 
@@ -770,6 +776,10 @@ textarea {
     }
     .home__what__anchor-info, .home__why__content__text {
         width: 90%;
+    }
+
+    .services__calendar__item {
+        flex: 0 1 100%;
     }
 }
 
