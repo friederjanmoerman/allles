@@ -279,7 +279,7 @@ header {
     margin-top: 100px;
 }
 
-.services__title h1 {
+.services__title h1, .section__contact h1 {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 80px;
@@ -656,6 +656,7 @@ textarea {
 .typewriter-container {
     white-space: wrap;
     overflow: hidden;
+    max-width: 600px;
 }
 
 .cursor {

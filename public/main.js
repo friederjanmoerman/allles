@@ -306,22 +306,28 @@ let isDeleting = false;
 let currentSentence = sentences[Math.floor(Math.random() * sentences.length)];
 
 function type() {
-  typewriterElement.textContent = isDeleting
-      ? currentSentence.substring(0, charIndex--)
-      : currentSentence.substring(0, charIndex++);
+  // Adjust the display text based on typing or deleting
+  typewriterElement.textContent = currentSentence.substring(0, charIndex);
 
+  // If typing and reaching the end of the sentence
   if (!isDeleting && charIndex === currentSentence.length) {
       isDeleting = true;
-      setTimeout(type, 2000);  // Pause at the end of each sentence
+      setTimeout(type, 2500); // Pause at the end of each sentence
+
+  // If deleting and fully erased the text
   } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       currentSentence = sentences[Math.floor(Math.random() * sentences.length)]; // Choose a new random sentence
-      setTimeout(type, 1000);
+      setTimeout(type, 1000); // Pause before starting the next sentence
+
+  // Continue typing or deleting
   } else {
-      setTimeout(type, isDeleting ? 50 : 100);  // Adjust speed for typing and deleting
+      charIndex += isDeleting ? -1 : 1;  // Increment or decrement charIndex
+      setTimeout(type, isDeleting ? 15 : 30);  // Adjust speed for typing and deleting
   }
 }
 
 // Start the typewriter animation
 type();
+
 
