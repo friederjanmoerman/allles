@@ -5,15 +5,15 @@
 
     { "source": "/contact", "destination": "contact.html" },
 
-    { "source": "/services/group-burn", "destination": "group-burn.html" },
-    { "source": "/services/group-pilates", "destination": "group-pilates.html" },
-    { "source": "/services/group-sculpt", "destination": "group-sculpt.html" },
-    { "source": "/services/group-yoga", "destination": "group-yoga.html" },
+    { "source": "/services/group/burn", "destination": "group-burn.html" },
+    { "source": "/services/group/pilates", "destination": "group-pilates.html" },
+    { "source": "/services/group/sculpt", "destination": "group-sculpt.html" },
+    { "source": "/services/group/yoga", "destination": "group-yoga.html" },
 
-    { "source": "/services/personal-small-group", "destination": "personal-small-group.html" },
+    { "source": "/services/small-group", "destination": "personal-small-group.html" },
     { "source": "/services/personal-training", "destination": "personal-training.html" },
-    { "source": "/services/personal-treatments", "destination": "personal-treatments.html" },
+    { "source": "/services/treatments", "destination": "personal-treatments.html" },
 
-    { "source": "/services/events-moxa", "destination": "events-moxa.html" }
+    { "source": "/services/events/moxa", "destination": "events/moxa.html" }
   ]
 }
