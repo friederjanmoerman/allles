@@ -1,9 +1,9 @@
 {
   "rewrites": [
-    { "source": "/services", "destination": "services.html" },
-    { "source": "/services/events", "destination": "services.html" },
-
     { "source": "/contact", "destination": "contact.html" },
+    { "source": "/services", "destination": "services/services.html" },
+
+    { "source": "/services/events", "destination": "services.html" },
 
     { "source": "/services/group/burn", "destination": "group-burn.html" },
     { "source": "/services/group/pilates", "destination": "group-pilates.html" },
