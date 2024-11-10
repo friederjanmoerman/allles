@@ -279,3 +279,49 @@ window.onload = function() {
   addFadeInEffect();     // Adds fade-in effect
   animate();
 };
+
+const sentences = [
+  "Drop a line if you have burning questions. No sage needed, just an email will do.",
+  "Tight shoulders? Tighter deadlines? Shoot us a message for instant inbox relief.",
+  "Feeling out of alignment? Our inbox is like a free-flowing Qi highway. Hop on.",
+  "Drop a line if you want to harmonize your inbox. Our replies come with good vibes and zero spam.",
+  "Need some inbox Zen? Contact us. We’re the digital essential oil you never knew you needed.",
+  "Feel a cosmic urge to connect? Follow it. We’re ready for all your mystical queries.",
+  "Drop us a line if you’ve got mind-body questions. We’re here to channel answers—no incense required.",
+  "Got stress? Drop a line. We’re basically inbox aromatherapy.",
+  "Step into our inbox… and feel your chakras instantly align.",
+  "Drop a line if you’re ready for wellness enlightenment (or just need info on our workshops).",
+  "Feeling out of balance? Reach out, we’re like email acupuncture—without the needles.",
+  "Seeking calm in a chaotic world? Hit us up. Our reply emails are basically guided meditations.",
+  "Trying to reach inner peace… or just us? Start typing, we’re listening.",
+  "Hit us up if you’re into wellness… or just into emails that make you feel seen.",
+  "Craving some corporate calm? Say hi! Think of us as an email meditation.",
+  "Ready to harmonize your workplace? Reach out. We’re basically corporate wellness ninjas.",
+  "Is your inbox feeling heavy? Send us a message, and let us lighten the load!"
+];
+
+const typewriterElement = document.getElementById("typewriter");
+let charIndex = 0;
+let isDeleting = false;
+let currentSentence = sentences[Math.floor(Math.random() * sentences.length)];
+
+function type() {
+  typewriterElement.textContent = isDeleting
+      ? currentSentence.substring(0, charIndex--)
+      : currentSentence.substring(0, charIndex++);
+
+  if (!isDeleting && charIndex === currentSentence.length) {
+      isDeleting = true;
+      setTimeout(type, 2000);  // Pause at the end of each sentence
+  } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      currentSentence = sentences[Math.floor(Math.random() * sentences.length)]; // Choose a new random sentence
+      setTimeout(type, 1000);
+  } else {
+      setTimeout(type, isDeleting ? 50 : 100);  // Adjust speed for typing and deleting
+  }
+}
+
+// Start the typewriter animation
+type();
+
