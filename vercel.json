@@ -3,17 +3,36 @@
     { "source": "/contact", "destination": "contact.html" },
     { "source": "/services", "destination": "services/services.html" },
 
-    { "source": "/services/events", "destination": "services.html" },
+    { "source": "/services/events/moxa", "destination": "services/events/moxa.html" },
 
-    { "source": "/services/group/burn", "destination": "group-burn.html" },
-    { "source": "/services/group/pilates", "destination": "group-pilates.html" },
-    { "source": "/services/group/sculpt", "destination": "group-sculpt.html" },
-    { "source": "/services/group/yoga", "destination": "group-yoga.html" },
+    { "source": "/services/group/burn", "destination": "services/group/burn.html" },
+    { "source": "/services/group/pilates", "destination": "services/group/pilates.html" },
+    { "source": "/services/group/sculpt", "destination": "services/group/sculpt.html" },
+    { "source": "/services/group/yoga", "destination": "services/group/yoga.html" },
 
-    { "source": "/services/small-group", "destination": "personal-small-group.html" },
-    { "source": "/services/personal-training", "destination": "personal-training.html" },
-    { "source": "/services/treatments", "destination": "personal-treatments.html" },
+    { "source": "/services/personal/personal-training", "destination": "services/group/personal-training.html" },
+    { "source": "/services/personal/small-group", "destination": "services/group/small-group.html" },
+    { "source": "/services/personal/treatments", "destination": "services/group/treatments.html" },
 
-    { "source": "/services/events/moxa", "destination": "services/events/moxa.html" }
+    {
+      "source": "/services/personal/treatments/chi-nei-tsang",
+      "destination": "services/group/treatments/chi-nei-tsang.html"
+    },
+    {
+      "source": "/services/personal/treatments/deep-tissue",
+      "destination": "services/group/treatments/deep-tissue.html"
+    },
+    {
+      "source": "/services/personal/treatments/medical-qi-gong",
+      "destination": "services/group/treatments/medical-qi-gong.html"
+    },
+    { "source": "/services/personal/treatments/relax", "destination": "services/group/treatments/relax.html" },
+    {
+      "source": "/services/personal/treatments/sports-massage",
+      "destination": "services/group/treatments/sports-massage.html"
+    },
+    { "source": "/services/personal/treatments/tuina", "destination": "services/group/treatments/tuina.html" },
+
+    { "source": "/services", "destination": "services/corporate.html" }
   ]
 }
