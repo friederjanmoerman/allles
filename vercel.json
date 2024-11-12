@@ -10,28 +10,28 @@
     { "source": "/services/group/sculpt", "destination": "services/group/sculpt.html" },
     { "source": "/services/group/yoga", "destination": "services/group/yoga.html" },
 
-    { "source": "/services/personal/personal-training", "destination": "services/group/personal-training.html" },
-    { "source": "/services/personal/small-group", "destination": "services/group/small-group.html" },
-    { "source": "/services/personal/treatments", "destination": "services/group/treatments.html" },
+    { "source": "/services/personal/personal-training", "destination": "services/personal/personal-training.html" },
+    { "source": "/services/personal/small-group", "destination": "services/personal/small-group.html" },
+    { "source": "/services/personal/treatments", "destination": "services/personal/treatments.html" },
 
     {
       "source": "/services/personal/treatments/chi-nei-tsang",
-      "destination": "services/group/treatments/chi-nei-tsang.html"
+      "destination": "services/personal/treatments/chi-nei-tsang.html"
     },
     {
       "source": "/services/personal/treatments/deep-tissue",
-      "destination": "services/group/treatments/deep-tissue.html"
+      "destination": "services/personal/treatments/deep-tissue.html"
     },
     {
       "source": "/services/personal/treatments/medical-qi-gong",
-      "destination": "services/group/treatments/medical-qi-gong.html"
+      "destination": "services/personal/treatments/medical-qi-gong.html"
     },
-    { "source": "/services/personal/treatments/relax", "destination": "services/group/treatments/relax.html" },
+    { "source": "/services/personal/treatments/relax", "destination": "services/personal/treatments/relax.html" },
     {
       "source": "/services/personal/treatments/sports-massage",
-      "destination": "services/group/treatments/sports-massage.html"
+      "destination": "services/personal/treatments/sports-massage.html"
     },
-    { "source": "/services/personal/treatments/tuina", "destination": "services/group/treatments/tuina.html" },
+    { "source": "/services/personal/treatments/tuina", "destination": "services/personal/treatments/tuina.html" },
 
     { "source": "/services", "destination": "services/corporate.html" }
   ]
