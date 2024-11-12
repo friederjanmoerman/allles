@@ -271,9 +271,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
-
 window.onload = function() {
   window.scrollTo(0, 0); // Scrolls to the top of the page
   addFadeInEffect();     // Adds fade-in effect
