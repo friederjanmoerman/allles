@@ -33,6 +33,6 @@
     },
     { "source": "/services/personal/treatments/tuina", "destination": "services/personal/treatments/tuina.html" },
 
-    { "source": "/services", "destination": "services/corporate.html" }
+    { "source": "/services/corporate", "destination": "services/corporate.html" }
   ]
 }
