@@ -290,6 +290,10 @@ header {
     margin: 20px 0 0;
 }
 
+.section__contact__info {
+    margin: 20px 0 40px;
+}
+
 .home__why {
     display: flex;
     align-items: center;
