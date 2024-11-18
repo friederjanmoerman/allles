@@ -586,7 +586,27 @@ section.services {
 
 .bar__title {
     position: absolute;
-    top: -45px;
+    font-size: 20px;
+}
+
+.bar:nth-child(4n-3) .bar__title {
+    left: 0;
+    top: -55px;
+}
+
+.bar:nth-child(4n-2) .bar__title {
+    bottom: -55px;
+    right: 0;
+}
+
+.bar:nth-child(4n-1) .bar__title {
+    bottom: -55px;
+    left: 0;
+}
+
+.bar:nth-child(4n) .bar__title {
+    top: -55px;
+    left: 0;
 }
   
 .bar::after {
