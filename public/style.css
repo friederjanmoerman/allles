@@ -56,7 +56,7 @@ body {
     margin: 0;
     background: #fff;
     background: rgb(0,0,0);
-    font-size: 17px;
+    font-size: 16px;
     font-family: "Noto Sans", sans-serif;
     font-weight: 100;
     line-height: 1.7em;
@@ -282,12 +282,9 @@ header {
     margin-top: 100px;
 }
 
-.services__title h1, .section__contact h1 {
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 80px;
-    line-height: 1em;
-    margin: 20px 0 0;
+.services__title h1 {
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .section__contact__info {
@@ -328,8 +325,9 @@ h2 {
 }
 
 .services__title__content__text {
-    width: auto;
-    margin: 0;
+    width: 465px;
+    padding-left: 10%;
+    margin-bottom: 80px;
 }
 
 .home__how {
@@ -578,25 +576,33 @@ section.services {
     transition: opacity 1s ease; /* Smooth fade */
 }
 
+.bars-3 {
+    max-width: 800px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 .bar {
+    flex:none;
     position: relative;
     background: #e9dbbd;
     margin-bottom: 100px;
+    width: 220px;
 }
 
 .bar__title {
     position: absolute;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .bar:nth-child(4n-3) .bar__title {
-    left: 0;
-    top: -55px;
+    right: 0;
+    bottom: -55px;
 }
 
 .bar:nth-child(4n-2) .bar__title {
-    bottom: -55px;
-    right: 0;
+    top: -55px;
+    left: 0;
 }
 
 .bar:nth-child(4n-1) .bar__title {
