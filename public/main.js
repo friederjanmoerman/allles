@@ -325,6 +325,8 @@ function type() {
 }
 
 // Start the typewriter animation
-type();
+if (typewriterElement) {
+  type();
+}
 
 
