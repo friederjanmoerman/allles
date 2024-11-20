@@ -210,7 +210,6 @@ h4 {
 }
 
 .header__nav {
-    width: 100%;
     max-width: 1024px;
     margin: 0 auto;
     display: flex;
@@ -940,6 +939,21 @@ textarea {
     }
     .services__calendar__item {
         flex: 0 1 calc(50% - 40px);
+    }
+    .services__title__header__inner h1 {
+        font-size: 40px;
+    }
+    body {
+        font-size: 14px;
+    }
+    .services__title__content__text {
+        width: 90%;
+    }
+    .services__title__header__inner {
+        max-width: 90%;
+    }
+    .services__title__header__inner__graphic {
+      display: none;
     }
 }
 
