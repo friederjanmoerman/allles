@@ -329,6 +329,10 @@ h2 {
     margin-bottom: 80px;
 }
 
+.services__title__content__text__time {
+    text-align: center;
+}
+
 .home__how {
     margin: 120px auto 61vh;
     z-index: 2000;
@@ -518,7 +522,7 @@ footer {
  */
 
 .services__title__header__inner {
-    max-width: 800px;
+    max-width: 750px;
     justify-content: center;
     margin: 0 auto;
     display: flex;
@@ -535,7 +539,7 @@ footer {
 .services__title__header__inner__graphic {
     position: absolute;
     border: 1px solid #e9dbbd;
-    width: calc(100% - 60px);
+    width: 100%;
     height: 120px;
     top: 70%;
 }
@@ -602,7 +606,7 @@ section.services {
 }
 
 .bars-3 {
-    max-width: 950px;
+    max-width: 750px;
     justify-content: space-between;
     margin: 0 auto;
 }
@@ -612,7 +616,7 @@ section.services {
     position: relative;
     /* background: #e9dbbd; */
     margin-bottom: 100px;
-    width: 220px;
+    width: 180px;
     border: 1px solid rgb(233, 219, 189);
     background: radial-gradient(circle, rgba(60,53,37,1) 0%, rgba(0,0,0,1) 100%);
 }
@@ -698,7 +702,7 @@ section.services {
 /* 3 per row */
 
 .bars-3 .bar:nth-child(3n-1) {
-    transform: translateY(28px);
+    transform: translateY(37px);
 }
 
 /* .bars-3 .bar:nth-child(3n-2)::after {
@@ -729,16 +733,16 @@ section.services {
 
 .bars-3 .bar:nth-child(3n-2) .bar__title {
     right: 0;
-    bottom: -55px;
+    bottom: -60px;
 }
 
 .bars-3 .bar:nth-child(3n-1) .bar__title {
-    top: -55px;
+    top: -60px;
     left: 0;
 }
 
 .bars-3 .bar:nth-child(3n) .bar__title {
-    bottom: -55px;
+    bottom: -60px;
     left: 0;
 }
 

@@ -286,21 +286,28 @@ const sentences = [
   "Feel a cosmic urge to connect? Follow it. We’re ready for all your mystical queries.",
   "Drop us a line if you’ve got mind-body questions. We’re here to channel answers—no incense required.",
   "Got stress? Drop a line. We’re basically inbox aromatherapy.",
-  "Step into our inbox… and feel your chakras instantly align.",
-  "Drop a line if you’re ready for wellness enlightenment (or just need info on our workshops).",
+  "Drop a line if you’re ready for wellness enlightenment or just need info on our workshops.",
   "Feeling out of balance? Reach out, we’re like email acupuncture—without the needles.",
   "Seeking calm in a chaotic world? Hit us up. Our reply emails are basically guided meditations.",
   "Trying to reach inner peace… or just us? Start typing, we’re listening.",
-  "Hit us up if you’re into wellness… or just into emails that make you feel seen.",
-  "Craving some corporate calm? Say hi! Think of us as an email meditation.",
-  "Ready to harmonize your workplace? Reach out. We’re basically corporate wellness ninjas.",
-  "Is your inbox feeling heavy? Send us a message, and let us lighten the load!"
+  "Ready to harmonize your workplace? Reach out. We’re basically corporate wellness ninjas."
 ];
 
 const typewriterElement = document.getElementById("typewriter");
 let charIndex = 0;
 let isDeleting = false;
-let currentSentence = sentences[Math.floor(Math.random() * sentences.length)];
+let shuffledSentences = shuffleArray([...sentences]); // Shuffle the sentences at the start
+let sentenceIndex = 0;
+let currentSentence = shuffledSentences[sentenceIndex];
+
+// Function to shuffle an array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 function type() {
   // Adjust the display text based on typing or deleting
@@ -308,19 +315,25 @@ function type() {
 
   // If typing and reaching the end of the sentence
   if (!isDeleting && charIndex === currentSentence.length) {
-      isDeleting = true;
-      setTimeout(type, 2500); // Pause at the end of each sentence
+    isDeleting = true;
+    setTimeout(type, 2500); // Pause at the end of each sentence
 
-  // If deleting and fully erased the text
+    // If deleting and fully erased the text
   } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      currentSentence = sentences[Math.floor(Math.random() * sentences.length)]; // Choose a new random sentence
-      setTimeout(type, 1000); // Pause before starting the next sentence
+    isDeleting = false;
+    sentenceIndex++;
+    if (sentenceIndex >= shuffledSentences.length) {
+      // Reshuffle when all sentences are shown
+      shuffledSentences = shuffleArray([...sentences]);
+      sentenceIndex = 0;
+    }
+    currentSentence = shuffledSentences[sentenceIndex];
+    setTimeout(type, 1000); // Pause before starting the next sentence
 
-  // Continue typing or deleting
+    // Continue typing or deleting
   } else {
-      charIndex += isDeleting ? -1 : 1;  // Increment or decrement charIndex
-      setTimeout(type, isDeleting ? 15 : 30);  // Adjust speed for typing and deleting
+    charIndex += isDeleting ? -1 : 1; // Increment or decrement charIndex
+    setTimeout(type, isDeleting ? 15 : 30); // Adjust speed for typing and deleting
   }
 }
 
@@ -328,5 +341,3 @@ function type() {
 if (typewriterElement) {
   type();
 }
-
-
