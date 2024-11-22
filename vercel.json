@@ -33,6 +33,7 @@
     },
     { "source": "/services/personal/treatments/tuina", "destination": "services/personal/treatments/tuina.html" },
 
+    { "source": "/services/corporate/yoga", "destination": "services/corporate/chair-massage.html" },
     { "source": "/services/corporate/pilates", "destination": "services/corporate/pilates.html" },
     { "source": "/services/corporate/workshop", "destination": "services/corporate/workshop.html" },
     { "source": "/services/corporate/yoga", "destination": "services/corporate/yoga.html" }

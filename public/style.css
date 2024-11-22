@@ -614,7 +614,6 @@ section.services {
 .bar {
     flex: none;
     position: relative;
-    /* background: #e9dbbd; */
     margin-bottom: 100px;
     width: 180px;
     border: 1px solid rgb(233, 219, 189);
@@ -625,17 +624,6 @@ section.services {
     position: absolute;
     font-size: 24px;
 }
-
-/* .bar::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-top: 51px solid black;
-    border-left: 51px solid transparent;
-} */
 
 .bar__inner {
     position: absolute;
@@ -654,29 +642,13 @@ section.services {
 
 /* 4 per row */
 
-/* .bars-4 .bar:nth-child(4n-3)::after {
-    border-left: 51px solid black;
-    border-top: 51px solid transparent;
-    top: auto;
-    left: 0;
-    bottom: 0;
+.bars-4 {
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
-.bars-4 .bar:nth-child(4n-1)::after, .bar:nth-child(4n)::after {
-    border-right: 51px solid black;
-    border-top: 51px solid transparent;
-    top: auto;
-    left: auto;
-    bottom: 0;
-    right: 0;
-}
-
-.bars-4 .bar:nth-child(4n-3) .bar__inner {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 24% 100%, 0 81%);
-}
-
-.bars-4 .bar:nth-child(4n-1) .bar__inner, .bar:nth-child(4n) .bar__inner {
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 76% 100%, 0 100%);
+.bars-4 .bar:nth-child(even) {
+    transform: translateY(37px);
 }
 
 .bars-4 .bar:nth-child(4n-3) .bar__title {
@@ -697,7 +669,7 @@ section.services {
 .bars-4 .bar:nth-child(4n) .bar__title {
     top: -55px;
     left: 0;
-} */
+}
 
 /* 3 per row */
 
