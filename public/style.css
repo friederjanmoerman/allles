@@ -587,6 +587,16 @@ section.services {
     margin-top: 40px;
 }
 
+.filter__description {
+    display: flex;
+    align-items: center;
+}
+
+.filter__description__body {
+    width: 465px; 
+    margin: 0 auto 40px;
+}
+
 .square {
     flex: 0 1 calc(25% - 40px);
     margin: 0 0 40px;
@@ -603,6 +613,10 @@ section.services {
 
     padding: 20px;
     border: 1px solid rgb(233, 219, 189);
+
+    color: rgb(233, 219, 189);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .bars-3 {

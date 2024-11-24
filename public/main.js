@@ -209,6 +209,13 @@ function addFadeInEffect() {
   }, 10);
 }
 
+const filterDescriptions = {
+  personal: "Together, we create a personalized plan that’s not only effective but also easy to integrate into your everyday life.",
+  group: "Work on flexibility, endurance, and strength by joining high-quality group movement classes. With four main categories, each class type offers unique benefits and experiences. Try different options to find your favorites.",
+  corporate: "Invest in a healthier, more productive workplace with our tailored wellness programs. Designed to reduce stress, boost focus, and promote physical and mental wellbeing, these services offer a flexible range of options to meet the unique needs of your organization.",
+  events: "Attend rituals that showcase authentic knowledge in using movement, meditation, sound, touch, and cuisine as medicine."
+};
+
 // Function to apply filter and fade-in effect
 function applyFilter(filter, clickedElement = null, updateUrl = false) {
   const allSquares = document.querySelectorAll(".square");
@@ -216,6 +223,14 @@ function applyFilter(filter, clickedElement = null, updateUrl = false) {
 
   // Remove active class from all buttons
   allButtons.forEach(button => button.classList.remove("active"));
+  
+  // Check if the filter exists in filterDescriptions
+  if (filter in filterDescriptions) {
+    // Set the element's innerText to the corresponding string
+    document.getElementById("filter__description").innerText = filterDescriptions[filter];
+  } else {
+    document.getElementById("filter__description").innerText = "";
+  }
 
   // Add active class to clicked button
   if (clickedElement) {
