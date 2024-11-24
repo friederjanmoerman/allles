@@ -128,27 +128,36 @@ const whatInfoPopup = document.getElementById("home__what__anchor__info-pop-up")
 
 const hoverToToggle = (e) => {
   e.addEventListener("mouseover", () => {
-    e.classList.add("is-hovered");
-    checkHoverClass();
+    if (window.innerWidth >= 1200) {
+      e.classList.add("is-hovered");
+      checkHoverClass();
+    }
   });
 
   e.addEventListener("mouseleave", () => {
-    e.classList.remove("is-hovered");
-    checkHoverClass();
+    if (window.innerWidth >= 1200) {
+      e.classList.remove("is-hovered");
+      checkHoverClass();
+    }
   });
 };
 
-for (var i = 0; i < hoverToToggleElements.length; i++) {
+for (let i = 0; i < hoverToToggleElements.length; i++) {
   hoverToToggle(hoverToToggleElements[i]);
 }
 
 const checkHoverClass = () => {
+  if (window.innerWidth < 1200) {
+    whatInfoPopup.classList.remove("js-is-displayed");
+    return; // Exit early for small screens
+  }
+
   let isHovered = false;
-  for (var i = 0; i < hoverToToggleElements.length; i++) {
+  for (let i = 0; i < hoverToToggleElements.length; i++) {
     if (hoverToToggleElements[i].classList.contains("is-hovered")) {
       isHovered = true;
       if (hoverToToggleElements[i].nextElementSibling) {
-        var copyAnchorInfo = hoverToToggleElements[i].nextElementSibling.innerHTML;
+        const copyAnchorInfo = hoverToToggleElements[i].nextElementSibling.innerHTML;
         whatInfoPopup.innerHTML = copyAnchorInfo;
       }
       break;
