@@ -26,7 +26,6 @@
       "source": "/services/personal/treatments/medical-qi-gong",
       "destination": "services/personal/treatments/medical-qi-gong.html"
     },
-    { "source": "/services/personal/treatments/relax", "destination": "services/personal/treatments/relax.html" },
     {
       "source": "/services/personal/treatments/sports-massage",
       "destination": "services/personal/treatments/sports-massage.html"
