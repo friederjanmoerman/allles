@@ -258,13 +258,12 @@ function applyFilter(filter, clickedElement = null, updateUrl = false) {
   });
 
   // Hide squares that do not match the selected filter
-  if (filter !== "all") { // Assuming "all" shows all items
+  // if (filter !== "all") { // Assuming "all" shows all items
     allSquares.forEach(square => {
       if (!square.classList.contains(filter)) {
         square.classList.add("hidden");
       }
     });
-  }
 
   // Apply fade-in effect
   addFadeInEffect();
