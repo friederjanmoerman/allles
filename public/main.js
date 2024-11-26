@@ -265,6 +265,8 @@ function applyFilter(filter, clickedElement = null, updateUrl = false) {
       }
     });
 
+  
+
   // Apply fade-in effect
   addFadeInEffect();
 
@@ -287,11 +289,14 @@ document.querySelectorAll(".filter-button").forEach(button => {
 // Check URL for "filter" parameter and apply corresponding filter on page load
 window.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const filter = urlParams.get("filter");
+  let filter = urlParams.get("filter");
 
-  if (filter) {
-    applyFilter(filter);
+  // Default to 'all' if filter is empty or nonexistent
+  if (!filter) {
+    filter = "all";
   }
+
+  applyFilter(filter);
 });
 
 window.onload = function() {
