@@ -956,6 +956,9 @@ textarea {
     .services__title__header__inner__graphic {
       display: none;
     }
+    .services__title h1 {
+        font-size: 52px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1015,6 +1018,9 @@ textarea {
     }
     .services__calendar__item {
         flex: 0 1 100%;
+    }
+    .services__title h1 {
+        font-size: 40px;
     }
 }
 
