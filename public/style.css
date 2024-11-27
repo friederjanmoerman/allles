@@ -662,9 +662,8 @@ section.services {
 /* 4 per row */
 
 .bars-4 {
-   justify-content: space-between;
-    margin: 0 auto; 
-    width: 100%;
+    gap: 45px;
+    margin: 0 auto;
 }
 
 .bars-4 .bar:nth-child(even) {
