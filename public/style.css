@@ -661,7 +661,7 @@ section.services {
 
 .bar__title {
     position: absolute;
-    font-size: 21px;
+    font-size: 15px;
 }
 
 .bar__inner {
@@ -695,7 +695,7 @@ section.services {
 }
 
 .bars-4 .bar .bar__title {
-    top: -60px;
+    top: -50px;
     left: 0;
 }
 
@@ -731,7 +731,7 @@ section.services {
 }
 
 .bars-3 .bar .bar__title {
-    top: -60px;
+    top: -50px;
     left: 0;
 }
 
