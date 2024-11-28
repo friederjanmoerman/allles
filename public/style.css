@@ -793,8 +793,10 @@ section.services {
 .services__calendar {
     display: flex;
     margin: 0 auto;
-    max-width: 750px;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 80px;
 }
 
 .services__calendar__item {
