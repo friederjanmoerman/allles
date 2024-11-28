@@ -333,10 +333,24 @@ h2 {
     margin-right: 2px;
 }
 
-.services__title__content__text {
+.services__title__header__inner h1 {
+    padding: 0 40px;
+    background: #000;
+    z-index: 2000;
+}
+
+.services__title__content {
     width: 465px;
-    margin: 0 auto;
-    margin-bottom: 80px;
+    margin: 0 auto 80px;
+    width: 465px;
+    padding: 0 40px;
+    background-color: #000;
+    position: relative;
+    z-index: 2000;
+}
+
+.services__title__content__text {
+    width: 100%;
 }
 
 .services__title__content__text__time {
@@ -539,11 +553,10 @@ footer {
     position: relative;
 }
 
-.services__title__header__inner h1, .services__title__content__text p {
+.services__title__header__inner {
     position: relative;
     background: #000;
     z-index: 500;
-    padding: 0 40px;
 }
 
 .services__title__header__inner__graphic {
@@ -779,9 +792,9 @@ section.services {
 
 .services__calendar {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
     margin: 0 auto;
+    max-width: 750px;
+    justify-content: center;
 }
 
 .services__calendar__item {
@@ -972,7 +985,7 @@ textarea {
     body {
         font-size: 14px;
     }
-    .services__title__content__text {
+    .services__title__content {
         width: 90%;
     }
     .services__title__header__inner {
@@ -983,6 +996,9 @@ textarea {
     }
     .services__title h1 {
         font-size: 52px;
+    }
+    footer {
+        align-items: center;
     }
 }
 
