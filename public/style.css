@@ -178,7 +178,7 @@ h1 {
 }
 
 .services__title__header__inner h1 {
-    font-size: 60px;
+    font-size: 43px;
     line-height: 1.7em;
 }
 
@@ -1066,7 +1066,7 @@ textarea {
         flex: 0 1 100%;
     }
     .services__title h1 {
-        font-size: 40px;
+        font-size: 34px;
     }
 }
 
