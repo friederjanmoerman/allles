@@ -235,7 +235,7 @@ const filterDescriptions = {
   personal: "Together, we create a personalized plan that’s not only effective but also easy to integrate into your everyday life.",
   group: "Work on flexibility, endurance, and strength by joining high-quality group movement classes. With four main categories, each class type offers unique benefits and experiences. Try different options to find your favorites.",
   corporate: "Invest in a healthier, more productive workplace with our tailored wellness programs. Designed to reduce stress, boost focus, and promote physical and mental wellbeing, these services offer a flexible range of options to meet the unique needs of your organization.",
-  events: "Attend rituals that showcase authentic knowledge in using movement, meditation, sound, touch, and cuisine as medicine."
+  events: "Attend rituals that immerse you in authentic knowledge of using movement, meditation, sound, touch, and cuisine as medicine."
 };
 
 // Function to apply filter and fade-in effect
@@ -311,7 +311,7 @@ window.addEventListener("DOMContentLoaded", () => {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   }
-  
+
   const urlParams = new URLSearchParams(window.location.search);
   let filter = urlParams.get("filter");
 
