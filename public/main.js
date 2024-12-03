@@ -301,6 +301,17 @@ document.querySelectorAll(".filter-button").forEach(button => {
 
 // Check URL for "filter" parameter and apply corresponding filter on page load
 window.addEventListener("DOMContentLoaded", () => {
+
+   // Check if the current path is "/about"
+   if (window.location.pathname === "/about") {
+    // Get the section with the ID "about"
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      // Scroll to the "about" section
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  
   const urlParams = new URLSearchParams(window.location.search);
   let filter = urlParams.get("filter");
 
