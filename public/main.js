@@ -179,27 +179,40 @@ document.getElementById('menu-toggle')
 const aboutLink = document.getElementById("about-link");
 
 if (aboutLink) {
-  aboutLink.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the default link behavior
+  console.log('about link found');
 
+  aboutLink.addEventListener("click", function (event) {
+    // Prevent default action only if on the homepage
+    if (window.location.pathname === "/") {
+      event.preventDefault();
+      console.log("Prevented default action on the homepage");
+    }
+
+    console.log('about clicked');
     document.body.classList.toggle('nav-open');
 
-    // Get the Y position of the "about" section
+    // Scroll to the "about" section
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
+      console.log('about section found');
+
+      // Calculate the position to scroll to
       const yOffset = aboutSection.getBoundingClientRect().top + window.pageYOffset;
 
-      // Smoothly scroll to the Y position
+      // Smooth scroll to the "about" section
       window.scrollTo({
         top: yOffset,
         behavior: "smooth"
       });
 
-      // Update the URL without page reload
+      // Update the URL to include "/about"
       history.pushState(null, null, "/about");
+    } else {
+      console.error('about section not found');
     }
   });
 }
+
 
 // Function to add fade-in effect with dynamic delay
 function addFadeInEffect() {
@@ -300,9 +313,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.onload = function() {
-  window.scrollTo(0, 0); // Scrolls to the top of the page
   addFadeInEffect();     // Adds fade-in effect
   animate();
+  
 };
 
 const sentences = [
