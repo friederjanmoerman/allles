@@ -3,7 +3,7 @@
     { "source": "/contact", "destination": "contact.html" },
     { "source": "/persona", "destination": "persona.html" },
     { "source": "/services", "destination": "services/services.html" },
-    { "source": "/about", "destination": "/index.html" },
+    { "source": "/about", "destination": "/" },
 
     { "source": "/services/events/moxa", "destination": "services/events/moxa.html" },
     { "source": "/services/events/meditation-station", "destination": "services/events/meditation-station.html" },
