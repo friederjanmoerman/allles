@@ -1009,25 +1009,25 @@ textarea {
     }
     .bars-3 .bar:nth-child(3n-2) .bar__title {
         left: 0;
-        top: -60px;
+        top: -50px;
         bottom: auto;
     }
     .bars-3 .bar:nth-child(3n) .bar__title {
         bottom: auto;
-        top: -60px;
+        top: -50px;
     }
     .bars-4 .bar:nth-child(4n-3) .bar__title {
         right: auto;
         bottom: auto;
-        top: -60px;
+        top: -50px;
         left: 0;
     }
     .bars-4 .bar:nth-child(4n-2) .bar__title {
-        top: -60px;
+        top: -50px;
     }
     .bars-4 .bar:nth-child(4n-1) .bar__title {
         bottom: auto;
-        top: -60px;
+        top: -50px;
     }
     .bar {
         margin: 40px 0 30px;
