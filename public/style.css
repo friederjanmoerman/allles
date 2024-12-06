@@ -1049,6 +1049,9 @@ textarea {
     .filter-button {
         font-size: 10px;
     }
+    .services__title__content__text {
+        text-align: justify;
+    }
 }
 
 @media (max-width: 470px) {
