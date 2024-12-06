@@ -1052,6 +1052,10 @@ textarea {
     .services__title__content__text {
         text-align: justify;
     }
+    .services__title__content {
+        padding: 0;
+        text-align: justify;
+    }
 }
 
 @media (max-width: 470px) {
