@@ -347,10 +347,12 @@ h2 {
     background-color: #000;
     position: relative;
     z-index: 2000;
+    text-align: justify;
 }
 
 .services__title__content__text {
     width: 100%;
+    text-align: justify;
 }
 
 .home__how {
@@ -1054,7 +1056,6 @@ textarea {
     }
     .services__title__content {
         padding: 0;
-        text-align: justify;
     }
 }
 
